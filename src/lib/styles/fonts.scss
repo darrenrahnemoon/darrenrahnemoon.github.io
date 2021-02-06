@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Jura');
+
+$font-primary: "Jura", sans-serif;
+$font-secondary: $font-primary;
+
+$font-x-small: 0.67rem;
+$font-small: 0.83rem;
+$font-medium: 1rem;
+$font-large: 1.17rem;
+$font-x-large: 1.5rem;
+$font-xx-large: 2rem;
+
+:root {
+    font-family : $font-primary;
+    font-size : 18px;
+}
+
+$font-size: (
+    '6' : $font-x-small,
+    '5' : $font-small,
+    '4' : $font-medium,
+    '3' : $font-large,
+    '2' : $font-x-large,
+    '1' : $font-xx-large
+);
+
+@each $size, $value in $font-size {
+    h#{$size}, .h#{$size} {
+        font-size : $value;
+        margin : $small 0;
+    }
+}

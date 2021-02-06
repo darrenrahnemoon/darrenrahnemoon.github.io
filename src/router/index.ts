@@ -1,29 +1,36 @@
-import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import _                           from 'lodash';
+import Vue                         from 'vue';
+import VueRouter, { RouteConfig }  from 'vue-router';
 
 Vue.use(VueRouter);
 
-const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
-];
+export const routes = _({
+    home    : { path : '/', component : () => import(/* webpackChunkName: "home" */ '../views/Home.vue') },
+    journey : { path : '/journey', component : () => import(/* webpackChunkName: "about" */ '../views/Journey.vue') },
+    work    : { path : '/work/:name?', component : () => import(/* webpackChunkName: "about" */ '../views/Work.vue') },
+    contact : { path : '/contact', component : () => import(/* webpackChunkName: "about" */ '../views/Contact.vue') },
+    rants   : { path : '/rants', component : () => import(/* webpackChunkName: "about" */ '../views/Rants.vue') },
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes,
+    playground : {
+        visible   : process.env.NODE_ENV !== 'production',
+        path      : '/playground',
+        component : () => import(/* webpackChunkName: "playground" */ '../views/Playground.vue'),
+    },
+} as Record<string, Route>)
+    .pickBy(route => [ true, undefined ].includes(route.visible))
+    .mapValues((route, name) => {
+        route.name = name;
+        return route;
+    })
+    .values()
+    .valueOf() as any as RouteConfig[];
+
+export default new VueRouter({
+    mode : 'history',
+    base : process.env.BASE_URL,
+    routes,
 });
 
-export default router;
+interface Route extends Omit<RouteConfig, 'path'> {
+    visible? : boolean; // if false, excludes the route
+}

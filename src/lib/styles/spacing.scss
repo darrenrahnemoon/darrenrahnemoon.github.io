@@ -1,0 +1,91 @@
+// Paddings and margins
+$none : 0;
+$x-small : 5px;
+$small : 10px;
+$medium : 20px;
+$large : 40px;
+$x-large : 80px;
+$xx-large : 160px;
+$xxx-large : 320px;
+
+$spacing: (
+    'none' : $none,
+    'xs' : $x-small,
+    'sm' : $small,
+    'md' : $medium,
+    'lg' : $large,
+    'xlg' : $x-large,
+    'xxlg' : $xx-large,
+    'xxxlg' : $xxx-large,
+);
+
+$direction: (
+    't' : ('top'),
+    'r' : ('right'),
+    'b' : ('bottom'),
+    'l' : ('left'),
+    'x' : ('right', 'left'),
+    'y' : ('top', 'bottom'),
+    ''  : ('top', 'bottom', 'right', 'left')
+);
+
+$property: (
+    'p' : 'padding',
+    'm' : 'margin',
+);
+
+// e.g. 'xs', 5px
+@each $size-shortened, $value in $spacing {
+
+    .h-#{$size-shortened} {
+        height : $value !important;
+    }
+
+    .w-#{$size-shortened} {
+        width : $value !important;
+    }
+
+    // e.g. 't', ('top')
+    @each $direction-shortened, $direction-expanded in $direction {
+        // e.g. 'm', 'margin'
+        @each $property-shortened, $property-expanded in $property {
+            // e.g. pt-xs, m-lg, mx-xxlg
+            // Positive
+            .#{$property-shortened}#{$direction-shortened}-#{$size-shortened} {
+                @each $direction in $direction-expanded {
+                    #{$property-expanded}-#{$direction} : $value !important;
+                }
+            }
+
+            // Negative
+            .#{$property-shortened}#{$direction-shortened}-n#{$size-shortened} {
+                @each $direction in $direction-expanded {
+                    #{$property-expanded}-#{$direction} : -$value !important;
+                }
+            }
+        }
+    }
+}
+
+// Device widths and media queries
+$device-width-small: 480px;
+$device-width-medium: 768px;
+$device-width-large: 1024px;
+
+@mixin on-small-devices() {
+    @media screen and (max-width: $device-width-small) {
+        @content;
+    }
+}
+
+@mixin on-medium-devices() {
+    @media screen and (min-width: $device-width-small) and (max-width: $device-width-large) {
+        @content;
+    }
+}
+
+@mixin on-large-devices() {
+    @media screen and (min-width: $device-width-large) {
+        @content;
+    }
+}

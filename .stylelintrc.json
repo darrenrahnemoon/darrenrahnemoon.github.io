@@ -1,0 +1,19 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "block-no-empty" : true,
+        "comment-no-empty": true,
+        "color-no-hex": null,
+        "color-hex-case": "upper",
+        "value-list-comma-space-after": "always",
+        "selector-combinator-space-after": "always",
+        "selector-combinator-space-before": "always",
+        "selector-list-comma-space-after": "always",
+        "declaration-colon-space-after": "always",
+        "declaration-colon-space-before": "always",
+        "selector-list-comma-newline-after": null,
+        "indentation": 4,
+        "max-empty-lines": 2,
+        "at-rule-no-unknown": null
+    }
+}
