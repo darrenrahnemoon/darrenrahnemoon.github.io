@@ -76,7 +76,7 @@ export default class AccordionItem extends Vue {
         .title {
             padding : $small $medium;
             cursor : pointer;
-            transition : all ease 0.5s;
+            transition : all ease 0.25s;
             background-color : rgba($color-primary, 0.1);
             border-bottom : 2px solid $color-primary;
 
@@ -92,7 +92,7 @@ export default class AccordionItem extends Vue {
         }
 
         .content {
-            transition : all ease 0.2s;
+            transition : all ease 0.25s;
             background-color : transparent;
             padding : 0 $medium;
             overflow : hidden;
@@ -106,7 +106,7 @@ export default class AccordionItem extends Vue {
         }
 
         .caret {
-            transition : all ease 0.5s;
+            transition : all ease 0.25s;
             float : right;
             transform : rotate(0deg);
 

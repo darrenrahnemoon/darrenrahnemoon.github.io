@@ -47,7 +47,7 @@ export default class ProgressBar extends Vue {
     position : relative;
 
     .bar {
-        transition : all ease 0.5s;
+        transition : all ease 0.25s;
         height : 100%;
         background-color : $color-primary;
         content : "";

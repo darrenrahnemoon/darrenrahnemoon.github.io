@@ -48,7 +48,7 @@ export default class AlertBox extends Vue {
     //
     overflow : hidden;
     text-overflow : ellipsis;
-    transition : all ease 0.2s;
+    transition : all ease 0.25s;
     font-size : $font-small;
 
     @extend .no-select;
@@ -77,7 +77,7 @@ export default class AlertBox extends Vue {
         font-size : $font-small;
         float : right;
         cursor : pointer;
-        transition : all ease 0.5s;
+        transition : all ease 0.25s;
 
         &:hover {
             opacity : 0.9;
