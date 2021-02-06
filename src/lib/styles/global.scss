@@ -1,12 +1,19 @@
+@import '../../../styles.config.js';
 @import './vendor/lineawesome/line-awesome.scss';
+@import './vendor/utils/index.scss';
 @import './spacing.scss';
+@import './responsive.scss';
 @import './colors.scss';
 @import './fonts.scss';
 @import './utils.scss';
 
+:root {
+    @include map-to-properties($root);
+}
+
 body {
-    padding : 0;
-    margin : 0;
+    padding : $none;
+    margin : $none;
     outline : none;
 }
 

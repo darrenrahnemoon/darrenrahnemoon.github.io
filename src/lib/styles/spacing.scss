@@ -1,24 +1,3 @@
-// Paddings and margins
-$none : 0;
-$x-small : 5px;
-$small : 10px;
-$medium : 20px;
-$large : 40px;
-$x-large : 80px;
-$xx-large : 160px;
-$xxx-large : 320px;
-
-$spacing: (
-    'none' : $none,
-    'xs' : $x-small,
-    'sm' : $small,
-    'md' : $medium,
-    'lg' : $large,
-    'xlg' : $x-large,
-    'xxlg' : $xx-large,
-    'xxxlg' : $xxx-large,
-);
-
 $direction: (
     't' : ('top'),
     'r' : ('right'),
@@ -29,18 +8,19 @@ $direction: (
     ''  : ('top', 'bottom', 'right', 'left')
 );
 
-$property: (
+$spacing-property: (
     'p' : 'padding',
     'm' : 'margin',
 );
 
 // e.g. 'xs', 5px
-@each $size-shortened, $value in $spacing {
-
+@each $size-shortened, $value in $spacing-shortened {
+    .height-#{$size-shortened},
     .h-#{$size-shortened} {
         height : $value !important;
     }
 
+    .width-#{$size-shortened},
     .w-#{$size-shortened} {
         width : $value !important;
     }
@@ -48,7 +28,7 @@ $property: (
     // e.g. 't', ('top')
     @each $direction-shortened, $direction-expanded in $direction {
         // e.g. 'm', 'margin'
-        @each $property-shortened, $property-expanded in $property {
+        @each $property-shortened, $property-expanded in $spacing-property {
             // e.g. pt-xs, m-lg, mx-xxlg
             // Positive
             .#{$property-shortened}#{$direction-shortened}-#{$size-shortened} {
@@ -64,28 +44,5 @@ $property: (
                 }
             }
         }
-    }
-}
-
-// Device widths and media queries
-$device-width-small: 480px;
-$device-width-medium: 768px;
-$device-width-large: 1024px;
-
-@mixin on-small-devices() {
-    @media screen and (max-width: $device-width-small) {
-        @content;
-    }
-}
-
-@mixin on-medium-devices() {
-    @media screen and (min-width: $device-width-small) and (max-width: $device-width-large) {
-        @content;
-    }
-}
-
-@mixin on-large-devices() {
-    @media screen and (min-width: $device-width-large) {
-        @content;
     }
 }

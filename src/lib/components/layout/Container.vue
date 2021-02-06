@@ -5,16 +5,22 @@
 </template>
 <style lang="scss">
 .container {
-    @include on-small-devices {
+    margin : $small $xxx-large;
+
+    @include on(small) {
         margin : $x-small;
     }
 
-    @include on-medium-devices {
+    @include on(medium) {
         margin : $small $large;
     }
 
-    @include on-large-devices {
+    @include on(large) {
         margin : $small $x-large;
+    }
+
+    @include on(x-large) {
+        margin : $small $xx-large;
     }
 }
 

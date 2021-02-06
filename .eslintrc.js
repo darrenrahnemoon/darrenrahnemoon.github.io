@@ -161,9 +161,9 @@ module.exports = {
         '@typescript-eslint/ban-ts-ignore'                 : 'off', // allow @ts-ignore since it's useful sometimes
 
         // vue specific rules
-        'vue/html-indent'           : [ 'error', 4 ],
-        'vue-scoped-css/require-scoped' : 'off', 
-        'vue/array-bracket-spacing' : [
+        'vue/html-indent'               : [ 'error', 4 ],
+        'vue-scoped-css/require-scoped' : 'off',
+        'vue/array-bracket-spacing'     : [
             'error',
             'always',
             { objectsInArrays : true, arraysInArrays : true },

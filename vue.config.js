@@ -1,4 +1,5 @@
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+const jsonImporter = require('node-sass-json-importer');
+
 module.exports = {
     configureWebpack : {
 
@@ -6,6 +7,11 @@ module.exports = {
     css : {
         loaderOptions : {
             sass : {
+                sassOptions : {
+                    importer : jsonImporter({
+                        convertCase : true,
+                    }),
+                },
                 prependData : '@import "./src/lib/styles/global.scss";',
             },
         },

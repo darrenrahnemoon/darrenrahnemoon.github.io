@@ -1,0 +1,16 @@
+@mixin on($screen) {
+    $width: map-get($screen-width, $screen);
+    $index: index($breakpoints, $width);
+
+    @if ($index == 1) {
+        @media screen and (max-width: $width) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (min-width: nth($breakpoints, $index - 1)) and (max-width: $width) {
+            @content;
+        }
+    }
+}

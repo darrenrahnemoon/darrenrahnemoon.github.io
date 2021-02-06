@@ -1,57 +1,41 @@
-$color-primary: #D1AF62;
-$color-secondary: #749C45;
-$color-dark: #1E1E1E;
-$color-darker: #111;
-$color-light: #EFEFEF;
-$color-lighter: #EEE;
-$color: (
-    'primary' : $color-primary,
-    'secondary' : $color-secondary,
-    'light' : $color-light,
-    'lighter' : $color-lighter,
-    'dark' : $color-dark,
-    'darker' : $color-darker,
-);
-
-body {
-    background-color : $color-darker;
-    color : $color-light;
-}
-
 @each $key, $value in $color {
 
-    // Background color
-    .bg-#{$key} {
+    .bc-#{$key},
+    .background-color-#{$key} {
         background-color : $value !important;
     }
-
-    // Text color
-    .color-#{$key} {
+    .tc-#{$key},
+    .text-color-#{$key} {
         color : $value !important;
     }
 
-    .shadow-#{$key}-1 {
+    .ms1-#{key},
+    .material-shadow-1-#{$key} {
         box-shadow : 0 1px 3px rgba($value, 0.12), 0 1px 2px rgba($value, 0.24);
         transition : all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+        &:hover {
+            box-shadow : 0 14px 28px rgba($value, 0.25), 0 10px 10px rgba($value, 0.22);
+        }
     }
 
-    .shadow-#{$key}-1:hover {
-        box-shadow : 0 14px 28px rgba($value, 0.25), 0 10px 10px rgba($value, 0.22);
-    }
-
-    .shadow-#{$key}-2 {
+    .ms2-#{key},
+    .material-shadow-2-#{$key} {
         box-shadow : 0 3px 6px rgba($value, 0.16), 0 3px 6px rgba($value, 0.23);
     }
 
-    .shadow-#{$key}-3 {
+    .ms3-#{key},
+    .material-shadow-3-#{$key} {
         box-shadow : 0 10px 20px rgba($value, 0.19), 0 6px 6px rgba($value, 0.23);
     }
 
-    .shadow-#{$key}-4 {
+    .ms4-#{key},
+    .material-shadow-4-#{$key} {
         box-shadow : 0 14px 28px rgba($value, 0.25), 0 10px 10px rgba($value, 0.22);
     }
 
-    .shadow-#{$key}-5 {
+    .ms5-#{key},
+    .material-shadow-5-#{$key} {
         box-shadow : 0 19px 38px rgba($value, 0.3), 0 15px 12px rgba($value, 0.22);
     }
 }

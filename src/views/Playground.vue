@@ -19,15 +19,15 @@
             e.g. 2:1
         </div>
         <row>
-            <column ratio="1" class="bg-darker color-light p-md">
+            <column ratio="1" class="bc-darker tc-light p-md">
                 <span class="h1">1</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column ratio="2" class="bg-primary color-dark p-md">
+            <column ratio="2" class="bc-primary tc-dark p-md">
                 <span class="h1">2</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column ratio="1" class="bg-secondary color-lighter p-md">
+            <column ratio="1" class="bc-secondary tc-lighter p-md">
                 <span class="h1">3</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
@@ -37,11 +37,11 @@
 
         <h2>Row Reverse</h2>
         <row reverse>
-            <column ratio="2" class="bg-dark color-light p-md">
+            <column ratio="2" class="bc-dark tc-light p-md">
                 <span class="h1">1</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column ratio="1" class="bg-secondary color-lighter p-md">
+            <column ratio="1" class="bc-secondary tc-lighter p-md">
                 <span class="h1">2</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
@@ -51,19 +51,19 @@
 
         <h2>Row With Vertical Orientation</h2>
         <row orientation="vertical">
-            <column ratio="3" class="bg-primary color-dark p-md">
+            <column ratio="3" class="bc-primary tc-dark p-md">
                 <span class="h1">1</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column class="bg-dark color-light p-md">
+            <column class="bc-dark tc-light p-md">
                 <span class="h1">2</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column class="bg-light color-dark p-md">
+            <column class="bc-light tc-dark p-md">
                 <span class="h1">3</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
-            <column ratio="2" class="bg-secondary color-light p-md">
+            <column ratio="2" class="bc-secondary tc-light p-md">
                 <span class="h1">4</span>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore voluptatem perferendis minima laboriosam accusantium, nostrum, fugiat, quam quia pariatur beatae est atque! Vel unde doloribus voluptate hic laudantium assumenda eveniet!
             </column>
@@ -186,7 +186,7 @@
         <!-- Accordions -->
         <h1>Accordions</h1>
         <accordion>
-            <accordion-item v-for="i in 10" :key="i" :class="[ '', 'primary', 'secondary', 'light' ][i % 4]">
+            <accordion-item v-for="i in 10" :key="i" :class="[ 'primary', 'primary', 'primary', 'secondary', 'secondary', 'secondary', 'light', 'light', 'light', 'light' ][(i - 1)]">
                 <template #title>
                     Accordion {{ i }}
                 </template>

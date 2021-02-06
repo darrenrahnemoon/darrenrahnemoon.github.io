@@ -1,0 +1,20 @@
+// Authored by: DaveKin
+@mixin map-to-properties($map) {
+    @if type-of($map) == map {
+        @each $property, $value in $map {
+            @if type-of($value) != map {
+                @if inspect($property) == 'description' {
+                    /* #{inspect($value)} */
+                }
+
+                @else {
+                    #{inspect($property)} : #{inspect($value)};
+                }
+            }
+
+            @else {
+                @include map-to-properties($value);
+            }
+        }
+    }
+}
