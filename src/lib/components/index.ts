@@ -14,28 +14,41 @@ import Accordion from './Accordion.vue';
 import AccordionItem from './AccordionItem.vue';
 import AlertBox from './AlertBox.vue';
 
-import Loader from './Loader.vue';
+import Overlay from './Overlay.vue';
 import Modal from './Modal.vue';
 import ProgressBar from './ProgressBar.vue';
 import Icon from './Icon.vue';
 
+import Loaders from '$/lib/components/loaders';
+import Transitions from '$/lib/animations/transitions';
+
+const prefix = 'r-';
+
 // Layouts
-Vue.component('row', Row);
-Vue.component('column', Column);
-Vue.component('container', Container);
+Vue.component(`${prefix}row`, Row);
+Vue.component(`${prefix}column`, Column);
+Vue.component(`${prefix}container`, Container);
 
 // Forms
-Vue.component('input-button', InputButton);
-Vue.component('input-checkbox', InputCheckbox);
-Vue.component('input-radio', InputRadio);
-Vue.component('input-text', InputText);
-Vue.component('input-switch', InputSwitch);
+Vue.component(`${prefix}input-button`, InputButton);
+Vue.component(`${prefix}input-checkbox`, InputCheckbox);
+Vue.component(`${prefix}input-radio`, InputRadio);
+Vue.component(`${prefix}input-text`, InputText);
+Vue.component(`${prefix}input-switch`, InputSwitch);
 
 // Misc
-Vue.component('accordion', Accordion);
-Vue.component('accordion-item', AccordionItem);
-Vue.component('alert-box', AlertBox);
-Vue.component('loader', Loader);
-Vue.component('modal', Modal);
-Vue.component('progress-bar', ProgressBar);
-Vue.component('icon', Icon);
+Vue.component(`${prefix}accordion`, Accordion);
+Vue.component(`${prefix}accordion-item`, AccordionItem);
+Vue.component(`${prefix}alert-box`, AlertBox);
+Vue.component(`${prefix}overlay`, Overlay);
+Vue.component(`${prefix}modal`, Modal);
+Vue.component(`${prefix}progress-bar`, ProgressBar);
+Vue.component(`${prefix}icon`, Icon);
+
+Object.keys(Loaders).forEach(name => {
+    Vue.component(`${prefix}loader-${_.kebabCase(name)}`, Loaders[name]);
+});
+
+Object.keys(Transitions).forEach(name => {
+    Vue.component(`${prefix}transition-${_.kebabCase(name)}`, Transitions[name]);
+});

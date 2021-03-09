@@ -1,8 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const jsonImporter = require('node-sass-json-importer');
-
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 module.exports = {
     configureWebpack : {
-
+        resolve : {
+            plugins : [ new TsconfigPathsPlugin() ],
+        },
     },
     css : {
         loaderOptions : {

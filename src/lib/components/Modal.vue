@@ -1,23 +1,11 @@
 <template>
     <div>
-        <transition
-            name="fade"
-            enter-active-class="fadeIn"
-            leave-active-class="fadeOut"
-        >
-            <div v-if="value" class="overlay fixed" />
-        </transition>
-        <transition
-            name="slide"
-            enter-active-class="slideInDown"
-            leave-active-class="slideOutUp"
-        >
-            <div v-if="value" class="modal-wrapper" @click="close()">
-                <div class="modal" @click.stop>
-                    <slot />
-                </div>
+        <overlay :visible="localVisible" />
+        <div v-if="localVisible" class="modal-wrapper" @click="close()">
+            <div class="modal" @click.stop>
+                <slot />
             </div>
-        </transition>
+        </div>
     </div>
 </template>
 
@@ -26,7 +14,10 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component
 export default class Modal extends Vue {
-    @Prop({ default : true })
+    @Prop({ type : Boolean })
+    dismissable: boolean;
+
+    @Prop({ type : Boolean, default : true })
     visible: boolean;
     localVisible: boolean = true;
 
@@ -35,13 +26,36 @@ export default class Modal extends Vue {
         this.localVisible = value;
     }
 
-    @Prop({ type : Boolean })
-    dismissable: boolean;
+    show() {
+        this.localVisible = true;
+        this.$emit('update:visible', true);
+    }
 
-    close() {
-        if (this.dismissable) {
-            this.$emit('input', false);
-        }
+    hide() {
+        this.localVisible = false;
+        this.$emit('update:visible', false);
+    }
+
+    toggle() {
+        this.localVisible = !this.localVisible;
+        this.$emit('update:visible', this.localVisible);
     }
 }
 </script>
+<style lang="scss">
+.modal {
+    display : inline-block;
+    margin : $large 0;
+}
+
+.modal-wrapper {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    z-index : 9999;
+    text-align : center;
+    overflow-y : scroll;
+}
+</style>

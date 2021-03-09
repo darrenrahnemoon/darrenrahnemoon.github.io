@@ -1,11 +1,12 @@
 import Vue from 'vue';
-import App from './App.vue';
-import './lib/serviceWorker';
-import router from './router';
-import './lib/components';
+import '$/lib/serviceWorker';
+import '$/lib/extensions';
+import '$/lib/components';
+import router from '$/router';
+
+import App from '$/views/App.vue';
 
 Vue.config.productionTip = false;
-
 new Vue({
     router,
     render : h => h(App),

@@ -46,3 +46,21 @@ $spacing-property: (
         }
     }
 }
+
+$positions: ( fixed, relative, absolute, inherit, initial, static, revert, sticky, unset );
+
+@each $position in $positions {
+    .pos-#{$position}, .position-#{$position} {
+        position : $position;
+    }
+}
+
+$horizontal-align: (center, left, right);
+
+@each $align in $horizontal-align {
+    .align-#{$align},
+    .horizontal-align-#{$align},
+    .ha-#{$align} {
+        text-align : $align;
+    }
+}

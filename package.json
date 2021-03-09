@@ -15,6 +15,8 @@
     "node-sass-json-importer": "^4.3.0",
     "register-service-worker": "^1.7.1",
     "remove": "^0.1.5",
+    "scrollmagic": "^2.0.8",
+    "scrollmagic-plugins": "^1.0.8",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@types/jquery": "^3.5.5",
     "@types/lodash": "^4.14.168",
+    "@types/scrollmagic": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -39,6 +42,7 @@
     "sass-loader": "^8.0.2",
     "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
     "typescript": "~4.1.2",
     "vue-template-compiler": "^2.6.11"
   }

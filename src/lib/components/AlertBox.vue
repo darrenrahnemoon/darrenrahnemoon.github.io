@@ -1,10 +1,18 @@
 <template>
-    <div class="alert" :class="cssClasses">
-        <div v-if="dismissable" class="dismiss" @click="dismiss">
-            <icon name="times" />
+    <r-transition-slide-fade>
+        <div
+            v-if="localVisible"
+            class="alert"
+            v-bind="$attrs"
+            :class="cssClasses"
+            v-on="$listeners"
+        >
+            <div v-if="dismissable" class="dismiss" @click="hide">
+                <r-icon name="times" />
+            </div>
+            <slot />
         </div>
-        <slot />
-    </div>
+    </r-transition-slide-fade>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
@@ -15,22 +23,33 @@ export default class AlertBox extends Vue {
     visible: boolean;
     localVisible: boolean = true;
 
+    @Prop({ type : Boolean })
+    dismissable: boolean;
+
     @Watch('visible')
     onvisibleChange(value: boolean) {
         this.localVisible = value;
     }
 
-    @Prop({ type : Boolean })
-    dismissable: boolean;
+    show() {
+        this.localVisible = true;
+        this.$emit('update:visible', true);
+    }
+
+    hide() {
+        this.localVisible = false;
+        this.$emit('update:visible', false);
+    }
+
+    toggle() {
+        this.localVisible = !this.localVisible;
+        this.$emit('update:visible', this.localVisible);
+    }
 
     get cssClasses() {
         return {
-            hidden : !this.localVisible,
+            dismissable : this.dismissable,
         };
-    }
-
-    dismiss() {
-        this.localVisible = false;
     }
 }
 </script>
@@ -52,18 +71,6 @@ export default class AlertBox extends Vue {
     font-size : $font-small;
 
     @extend .no-select;
-
-    @each $key, $value in $color {
-        &.#{$key} {
-            color : $value;
-            border-left-color : $value;
-            border-right-color : $value;
-
-            &:hover {
-                background-color : rgba($value, 0.1);
-            }
-        }
-    }
 
     .title {
         font-size : $font-large;
@@ -92,6 +99,22 @@ export default class AlertBox extends Vue {
         max-height : 0;
         padding : 0 $small + $x-small !important;
         margin : 0 !important;
+    }
+
+    &.dismissable:active {
+        transform : scale(1, 0.9);
+    }
+
+    @each $key, $value in $color {
+        &.#{$key} {
+            color : $value;
+            border-left-color : $value;
+            border-right-color : $value;
+
+            &:hover {
+                background-color : rgba($value, 0.1);
+            }
+        }
     }
 }
 </style>
