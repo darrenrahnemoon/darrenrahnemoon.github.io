@@ -88,7 +88,7 @@ export default class InputCheckbox extends Vue {
     }
 
     &:active {
-        transform : scale(0.95, 0.95);
+        transform : scale(0.9, 0.9);
     }
 
     &:hover input ~ .check, &:focus input ~ .check {

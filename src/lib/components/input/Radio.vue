@@ -39,42 +39,55 @@ export default class InputRadio extends Vue {
 .input.radio {
     display : inline-block;
     position : relative;
-    padding : 0 $small 0 $medium * 1.5;
-    margin : $x-small 0;
-    user-select : none;
     transition : all ease 0.5s;
+
+    margin : $x-small 0;
+    padding : 0 $small 0 $medium * 1.5;
+
     color : $color-primary;
+
     cursor : pointer;
+
+    user-select : none;
 
     .check {
         position : absolute;
         top : 0;
         left : 0;
-        height : $medium;
-        width : $medium;
-        border : 2px solid $color-primary;
-        border-radius : 50%;
         transition : all ease 0.25s;
 
+        width : $medium;
+        height : $medium;
+
+        border : 2px solid $color-primary;
+        border-radius : 50%;
+
         &::after {
-            content : "";
-            position : absolute;
             display : none;
-            left : $x-small;
+            position : absolute;
             top : $x-small;
+            left : $x-small;
+
             width : $small;
             height : $small;
-            border-radius : 50%;
+
             background-color : $color-compliment-primary;
+
+            border-radius : 50%;
+
+            content : "";
         }
     }
 
     input {
         position : absolute;
-        opacity : 0;
-        height : 0;
+
         width : 0;
+        height : 0;
+
         cursor : pointer;
+
+        opacity : 0;
 
         &:checked ~ .check {
             background-color : $color-primary !important;
@@ -90,7 +103,7 @@ export default class InputRadio extends Vue {
     }
 
     &:active {
-        transform : scale(0.95, 0.95);
+        transform : scale(0.9, 0.9);
     }
 
     &:active input ~ .check {

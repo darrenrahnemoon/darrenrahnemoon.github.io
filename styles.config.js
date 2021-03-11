@@ -25,14 +25,15 @@ const fonts = {
 
 // Spacing
 const spacing = {
-    'none'      : { value : '0',     shortened : 'none' },
-    'x-small'   : { value : '5px',   shortened : 'xs' },
-    'small'     : { value : '10px',  shortened : 'sm' },
-    'medium'    : { value : '20px',  shortened : 'md' },
-    'large'     : { value : '40px',  shortened : 'lg' },
-    'x-large'   : { value : '80px',  shortened : 'xlg' },
-    'xx-large'  : { value : '160px', shortened : 'xxlg' },
-    'xxx-large' : { value : '320px', shortened : 'xxx-lg' },
+    'thickness-primary' : { value : '2px',   shortened : 'thickness' },
+    'none'              : { value : '0',     shortened : 'none' },
+    'x-small'           : { value : '5px',   shortened : 'xs' },
+    'small'             : { value : '10px',  shortened : 'sm' },
+    'medium'            : { value : '20px',  shortened : 'md' },
+    'large'             : { value : '40px',  shortened : 'lg' },
+    'x-large'           : { value : '80px',  shortened : 'xlg' },
+    'xx-large'          : { value : '160px', shortened : 'xxlg' },
+    'xxx-large'         : { value : '320px', shortened : 'xxx-lg' },
 };
 
 // Screen widths

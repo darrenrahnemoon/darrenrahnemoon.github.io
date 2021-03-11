@@ -1,5 +1,8 @@
 {
     "extends": "stylelint-config-standard",
+    "plugins": [
+		"stylelint-order"
+	],
     "rules": {
         "block-no-empty" : true,
         "comment-no-empty": true,
@@ -14,6 +17,95 @@
         "selector-list-comma-newline-after": null,
         "indentation": 4,
         "max-empty-lines": 2,
-        "at-rule-no-unknown": null
+        "at-rule-no-unknown": null,
+        "declaration-empty-line-before": null,
+        "order/order": [
+            "dollar-variables",
+            "declarations",
+			"custom-properties",
+            "rules",
+            "at-variables"
+		],
+        "order/properties-order": [
+            [
+                {
+                    "emptyLineBefore": "never",
+                    "properties": [
+                        "display",
+                        "position",
+                        "top",
+                        "right",
+                        "bottom",
+                        "left",
+                        "transform",
+                        "transition"
+                    ]
+                },
+                {
+                    "emptyLineBefore": "threshold",
+                    "properties": [
+                        "width",
+                        "height"
+                    ]
+                },
+                {
+                    "emptyLineBefore": "threshold",
+                    "properties": [
+                        "margin",
+                        "margin-top",
+                        "margin-right",
+                        "margin-bottom",
+                        "margin-left",
+                        "padding",
+                        "padding-top",
+                        "padding-right",
+                        "padding-bottom",
+                        "padding-left"
+                    ]
+                },
+                {
+                    "emptyLineBefore": "threshold",
+                    "properties": [
+                        "background",
+                        "background-image",
+                        "background-color",
+                        "color"
+                    ]
+                },
+                {
+                    "emptyLineBefore": "threshold",
+                    "properties": [
+                        "border",
+                        "border-color",
+                        "border",
+                        "border-top",
+                        "border-right",
+                        "border-bottom",
+                        "border-left",
+                        "border-radius",
+                        "border-top-color",
+                        "border-right-color",
+                        "border-bottom-color",
+                        "border-left-color"
+                    ]
+                },
+                {
+                    "emptyLineBefore": "threshold",
+                    "properties": [
+                        "font",
+                        "font-family",
+                        "font-size",
+                        "font-weight",
+                        "text-align",
+                        "vertical-align"
+                    ]
+                }
+            ],
+            {
+                "unspecified": "bottomAlphabetical",
+                "emptyLineBeforeUnspecified": "always",
+                "emptyLineMinimumPropertyThreshold" : 4
+            }
+        ]
     }
 }

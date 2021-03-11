@@ -382,18 +382,19 @@
 
         <!-- Checkbox -->
         <h1>Checkboxes</h1>
-        <r-input-checkbox class="primary" option="primary">
+        <r-input-checkbox class="primary">
             Primary
         </r-input-checkbox>
-        <r-input-checkbox class="secondary" option="secondary">
+        <r-input-checkbox class="secondary">
             Seconday
         </r-input-checkbox>
-        <r-input-checkbox class="light" option="light">
+        <r-input-checkbox class="light">
             Light
         </r-input-checkbox>
-        <r-input-checkbox class="primary" option="primary">
+        <r-input-checkbox class="primary">
             Primary
         </r-input-checkbox>
+
         <hr>
 
         <!-- Radio Button -->
@@ -410,6 +411,22 @@
         <r-input-radio v-model="radioValue" class="primary" option="primary">
             Primary
         </r-input-radio>
+
+        <hr>
+
+        <h1>Switches</h1>
+        <r-input-switch class="primary small">
+            Primary
+        </r-input-switch>
+        <r-input-switch class="secondary medium">
+            Seconday
+        </r-input-switch>
+        <r-input-switch class="light large">
+            Light
+        </r-input-switch>
+        <r-input-switch class="primary x-large">
+            Primary
+        </r-input-switch>
     </r-container>
 </template>
 <style lang="scss">
@@ -454,6 +471,7 @@ svg {
     rect {
         width : 3px;
         height : 100%;
+
         fill : $color-primary;
     }
 }
