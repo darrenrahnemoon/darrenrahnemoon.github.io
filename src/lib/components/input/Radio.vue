@@ -1,8 +1,16 @@
 <template>
-    <label class="input radio" @click="select">
-        <slot />
+    <label
+        class="input radio"
+        tabindex="1"
+        @click="select"
+        @keypress.enter="select"
+        @keypress.space="select"
+    >
         <input type="radio" :checked="value === option">
-        <span class="check" />
+        <div class="check" />
+        <div class="content">
+            <slot />
+        </div>
     </label>
 </template>
 
@@ -38,38 +46,44 @@ export default class InputRadio extends Vue {
 <style lang="scss">
 .input.radio {
     display : inline-block;
-    position : relative;
-    transition : all ease 0.5s;
+    transition : all ease 0.25s;
 
-    margin : $x-small 0;
-    padding : 0 $small 0 $medium * 1.5;
+    margin : $medium / 4 0;
 
     color : $color-primary;
 
+    font-size : $font-medium;
+
     cursor : pointer;
 
-    user-select : none;
+
+    .content {
+        display : inline-block;
+        margin : 0 $medium / 2;
+        vertical-align : middle;
+    }
 
     .check {
-        position : absolute;
-        top : 0;
-        left : 0;
+        display : inline-block;
+        position : relative;
         transition : all ease 0.25s;
 
         width : $medium;
         height : $medium;
 
-        border : 2px solid $color-primary;
+        border : $thickness-primary solid $color-primary;
         border-radius : 50%;
+
+        vertical-align : middle;
 
         &::after {
             display : none;
             position : absolute;
-            top : $x-small;
-            left : $x-small;
+            top : $medium / 4;
+            left : $medium / 4;
 
-            width : $small;
-            height : $small;
+            width : $medium / 2;
+            height : $medium / 2;
 
             background-color : $color-compliment-primary;
 
@@ -80,14 +94,7 @@ export default class InputRadio extends Vue {
     }
 
     input {
-        position : absolute;
-
-        width : 0;
-        height : 0;
-
-        cursor : pointer;
-
-        opacity : 0;
+        display : none;
 
         &:checked ~ .check {
             background-color : $color-primary !important;
@@ -98,7 +105,7 @@ export default class InputRadio extends Vue {
         }
     }
 
-    &:hover input ~ .check, &:focus input ~ .check {
+    &:hover ~ .check, &:focus ~ .check {
         background-color : rgba($color-primary, 0.3);
     }
 
@@ -106,7 +113,7 @@ export default class InputRadio extends Vue {
         transform : scale(0.9, 0.9);
     }
 
-    &:active input ~ .check {
+    &:active ~ .check {
         background-color : $color-primary;
     }
 
@@ -128,12 +135,36 @@ export default class InputRadio extends Vue {
                 }
             }
 
-            &:hover input ~ .check, &:focus input ~ .check {
+            &:hover ~ .check, &:focus ~ .check {
                 background-color : rgba($value, 0.3);
             }
 
-            &:active input ~ .check {
+            &:active ~ .check {
                 background-color : $value;
+            }
+        }
+    }
+
+    @each $key, $value in $spacing {
+        &.#{$key} {
+            margin : $value / 4 0;
+            font-size : map-get($font, $key);
+
+            .check {
+                width : $value;
+                height : $value;
+
+                &::after {
+                    top : $value / 4;
+                    left : $value / 4;
+
+                    width : $value / 2;
+                    height : $value / 2;
+                }
+            }
+
+            .content {
+                margin : 0 $value / 2;
             }
         }
     }

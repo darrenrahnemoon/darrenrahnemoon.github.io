@@ -12,12 +12,13 @@
 }
 
 body {
-    padding : $none;
     margin : $none;
+    padding : $none;
+
     outline : none !important;
 }
 
-button, input, textarea {
+button, input, textarea, .input {
     &, &:focus, &:hover, &:active {
         -webkit-appearance : none;
         -moz-appearance : none;

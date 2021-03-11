@@ -1,12 +1,22 @@
 <template>
-    <label class="input checkbox" @click="toggle">
-        <slot />
+    <label
+        class="input checkbox"
+        :class="cssClasses"
+        tabindex="1"
+        @click="toggle"
+        @keypress.enter="toggle"
+        @keypress.space="toggle"
+    >
         <input type="checkbox" :checked="value">
-        <span class="check" />
+        <div class="check" />
+        <div class="content">
+            <slot />
+        </div>
     </label>
 </template>
 
 <script lang="ts">
+import { Debounce } from '$/lib/utilities/debounce';
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component
@@ -30,9 +40,20 @@ export default class InputCheckbox extends Vue {
         this.$emit('input', false);
     }
 
+    /**
+     * HACK: click event on labels get triggered twice if they're targetting an input
+     * Reference: https://github.com/vuejs/vue/issues/3699
+     */
+    @Debounce(1)
     toggle() {
         this.localValue = !this.localValue;
         this.$emit('input', this.localValue);
+    }
+
+    get cssClasses() {
+        return {
+            checked : this.localValue,
+        };
     }
 }
 </script>
@@ -40,50 +61,64 @@ export default class InputCheckbox extends Vue {
 <style lang="scss">
 .input.checkbox {
     display : inline-block;
-    position : relative;
-    padding : 0 $medium 0 $medium * 1.75;
-    margin : $x-small $none;
-    user-select : none;
     transition : all ease 0.25s;
+
+    margin : $medium / 4 0;
+
     color : $color-primary;
-    cursor : pointer;
+
+    font-size : $font-medium;
 
     .check {
-        position : absolute;
-        top : 0;
-        left : 0;
-        height : $medium;
+        display : inline-block;
+        position : relative;
+        transition : all ease 0.25s;
+
         width : $medium;
-        border : 2px solid $color-primary;
-        transition : all ease 0.5s;
+        height : $medium;
+
+        border : $thickness-primary solid $color-primary;
+
+        vertical-align : middle;
 
         &::after {
-            content : "";
-            position : absolute;
             display : none;
-            left : 7px;
-            top : 2px;
-            width : $x-small;
-            height : $small;
-            border : solid $color-compliment-primary;
-            border-width : 0 2px 2px 0;
+            position : absolute;
+            top : $medium / 10;
+            left : $medium / 3; // SHOULD DO: figure out the formula to determine the distance in X at which the checkmark is centered
             transform : rotate(45deg);
+
+            width : $medium / 4;
+            height : $medium / 2;
+
+            border : solid $color-compliment-primary;
+
+            border-width : 0 $thickness-primary $thickness-primary 0;
+            content : "";
         }
     }
 
-    input {
-        position : absolute;
-        opacity : 0;
-        height : 0;
-        width : 0;
-        cursor : pointer;
-
-        &:checked ~ .check {
-            background-color : $color-primary !important;
+    &:hover, &:focus {
+        .check {
+            background-color : rgba($color-primary, 0.3);
         }
+    }
 
-        &:checked ~ .check::after {
-            display : block;
+    &:active .check {
+        background-color : $color-primary;
+    }
+
+    input {
+        display : none;
+    }
+
+    &.checked {
+        .check {
+            background-color : $color-primary !important;
+
+            &::after {
+                display : block;
+            }
         }
     }
 
@@ -91,12 +126,10 @@ export default class InputCheckbox extends Vue {
         transform : scale(0.9, 0.9);
     }
 
-    &:hover input ~ .check, &:focus input ~ .check {
-        background-color : rgba($color-primary, 0.3);
-    }
-
-    &:active input ~ .check {
-        background-color : $color-primary;
+    .content {
+        display : inline-block;
+        margin : 0 $medium / 2;
+        vertical-align : middle;
     }
 
     @each $key, $value in $color {
@@ -111,18 +144,42 @@ export default class InputCheckbox extends Vue {
                 }
             }
 
-            input {
-                &:checked ~ .check {
-                    background-color : $value !important;
+            &.checked .check {
+                background-color : $value !important;
+            }
+
+            &:hover, &:focus {
+                .check {
+                    background-color : rgba($value, 0.3);
                 }
             }
 
-            &:hover input ~ .check, &:focus input ~ .check {
-                background-color : rgba($value, 0.3);
+            &:active .check {
+                background-color : $value;
+            }
+        }
+    }
+
+    @each $key, $value in $spacing {
+        &.#{$key} {
+            margin : $value / 4 0;
+            font-size : map-get($font, $key);
+
+            .check {
+                width : $value;
+                height : $value;
+
+                &::after {
+                    top : $value / 10;
+                    left : $value / 3;
+
+                    width : $value / 4;
+                    height : $value / 2;
+                }
             }
 
-            &:active input ~ .check {
-                background-color : $value;
+            .content {
+                margin : 0 $value / 2;
             }
         }
     }

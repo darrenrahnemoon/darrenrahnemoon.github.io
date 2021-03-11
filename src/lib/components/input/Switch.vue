@@ -1,8 +1,15 @@
 <template>
-    <label class="input switch" :class="cssClasses" @click="toggle">
+    <label
+        class="input switch"
+        :class="cssClasses"
+        tabindex="1"
+        @click="toggle"
+        @keypress.enter="toggle"
+        @keypress.space="toggle"
+    >
         <div class="switch">
             <input type="checkbox" :checked="value">
-            <span class="slider" />
+            <div class="slider" />
         </div>
         <div class="content">
             <slot />
@@ -58,7 +65,11 @@ export default class InputSwitch extends Vue {
     display : inline-block;
     transition : all ease 0.25s;
 
+    margin : $medium / 4 0;
+
     color : $color-primary;
+
+    font-size : $font-medium;
 
     cursor : pointer;
 
@@ -185,6 +196,9 @@ export default class InputSwitch extends Vue {
 
     @each $key, $value in $spacing {
         &.#{$key} {
+            margin : $value / 4 0;
+            font-size : map-get($font, $key);
+
             .switch {
                 width : $value * 2;
                 height : $value;

@@ -60,49 +60,66 @@ export default class InputButton extends Vue {
 <style lang="scss">
 .input.button {
     display : inline-block;
+    transition : all ease 0.25s;
+
     margin : $x-small 0;
     padding : $none;
+
+    background-color : transparent;
+
+    border : none;
+
     font-family : $font-secondary;
     font-size : $medium;
-    background-color : transparent;
-    border : none;
-    transition : all ease 0.25s;
+
     cursor : pointer;
 
     .content {
-        border : 2px solid $color-primary;
-        padding : $small $small * 1.5;
         display : inline-block;
         transition : all ease 0.25s;
+
+        padding : $small $small * 1.5;
+
         background-color : transparent;
         color : $color-primary;
+
+        border : 2px solid $color-primary;
     }
 
     .content-before {
-        border-top : 2px solid $color-primary;
-        border-left : 2px solid $color-primary;
-        border-bottom : 2px solid $color-primary;
-        padding : $small $small * 1.5;
         transition : all ease 0.25s;
+
+        padding : $small $small * 1.5;
+
         background-color : transparent;
         color : $color-primary;
+
+        border-top : 2px solid $color-primary;
+        border-bottom : 2px solid $color-primary;
+        border-left : 2px solid $color-primary;
     }
 
     .content-after {
+        transition : all ease 0.25s;
+
+        padding : $small $small * 1.5;
+
+        background-color : transparent;
+        color : $color-primary;
+
         border-top : 2px solid $color-primary;
         border-right : 2px solid $color-primary;
         border-bottom : 2px solid $color-primary;
-        padding : $small $small * 1.5;
-        transition : all ease 0.25s;
-        background-color : transparent;
-        color : $color-primary;
     }
 
     &.block {
         display : block;
+
         width : 100%;
-        text-align : center;
+
         margin : $x-small 0;
+
+        text-align : center;
 
         .content-before {
             border-right : 2px solid $color-primary;
@@ -110,8 +127,8 @@ export default class InputButton extends Vue {
         }
 
         .content-after {
-            border-left : 2px solid $color-primary;
             border-top : none;
+            border-left : 2px solid $color-primary;
         }
 
         .content-before, .content-after, .content {
@@ -136,8 +153,8 @@ export default class InputButton extends Vue {
 
         .content, .content-before, .content-after {
             background-color : darken($color-primary, 5%);
-            border-color : darken($color-primary, 5%);
             color : $color-dark;
+            border-color : darken($color-primary, 5%);
         }
     }
 
@@ -158,8 +175,8 @@ export default class InputButton extends Vue {
             &:active {
                 .content, .content-before, .content-after {
                     background-color : darken($value, 5%);
-                    border-color : darken($value, 5%);
                     color : map-get($color-compliment, $key);
+                    border-color : darken($value, 5%);
                 }
             }
         }

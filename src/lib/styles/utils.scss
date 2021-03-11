@@ -8,9 +8,13 @@
 }
 
 hr {
-    border-style : solid;
-    border-color : darken($color-light, 20%);
-    border-radius : 5px;
-    background-color : darken($color-light, 20%);
     margin : $large 0;
+
+    background-color : darken($color-light, 20%);
+
+    border-color : darken($color-light, 20%);
+    border-radius : none;
+
+    border-style : solid;
+    border-width : $thickness-primary;
 }

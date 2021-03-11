@@ -382,51 +382,180 @@
 
         <!-- Checkbox -->
         <h1>Checkboxes</h1>
-        <r-input-checkbox class="primary">
-            Primary
-        </r-input-checkbox>
-        <r-input-checkbox class="secondary">
-            Seconday
-        </r-input-checkbox>
-        <r-input-checkbox class="light">
-            Light
-        </r-input-checkbox>
-        <r-input-checkbox class="primary">
-            Primary
-        </r-input-checkbox>
+        <r-row>
+            <r-column>
+                <r-input-checkbox class="primary small">
+                    Primary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="secondary small">
+                    Secondary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="light small">
+                    Light
+                </r-input-checkbox>
+            </r-column>
+            <r-column>
+                <r-input-checkbox class="primary medium">
+                    Primary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="secondary medium">
+                    Secondary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="light medium">
+                    Light
+                </r-input-checkbox>
+            </r-column>
+            <r-column>
+                <r-input-checkbox class="primary large">
+                    Primary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="secondary large">
+                    Secondary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="light large">
+                    Light
+                </r-input-checkbox>
+            </r-column>
+            <r-column ratio="2">
+                <r-input-checkbox class="primary x-large">
+                    Primary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="secondary x-large">
+                    Secondary
+                </r-input-checkbox>
+                <br>
+                <r-input-checkbox class="light x-large">
+                    Light
+                </r-input-checkbox>
+            </r-column>
+        </r-row>
 
         <hr>
 
         <!-- Radio Button -->
         <h1>Radio Buttons</h1>
-        <r-input-radio v-model="radioValue" class="primary" option="primary">
-            Primary
-        </r-input-radio>
-        <r-input-radio v-model="radioValue" class="secondary" option="secondary">
-            Seconday
-        </r-input-radio>
-        <r-input-radio v-model="radioValue" class="light" option="light">
-            Light
-        </r-input-radio>
-        <r-input-radio v-model="radioValue" class="primary" option="primary">
-            Primary
-        </r-input-radio>
+        <div class="mb-md">
+            Value: {{ radioValue }}
+        </div>
+        <r-row>
+            <r-column>
+                <r-input-radio v-model="radioValue" class="primary small" option="primary">
+                    Primary
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="secondary small" option="secondary">
+                    Seconday
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="light small" option="light">
+                    Light
+                </r-input-radio>
+            </r-column>
+            <r-column>
+                <r-input-radio v-model="radioValue" class="primary medium" option="primary">
+                    Primary
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="secondary medium" option="secondary">
+                    Seconday
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="light medium" option="light">
+                    Light
+                </r-input-radio>
+            </r-column>
+            <r-column>
+                <r-input-radio v-model="radioValue" class="primary large" option="primary">
+                    Primary
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="secondary large" option="secondary">
+                    Seconday
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="light large" option="light">
+                    Light
+                </r-input-radio>
+            </r-column>
+            <r-column>
+                <r-input-radio v-model="radioValue" class="primary x-large" option="primary">
+                    Primary
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="secondary x-large" option="secondary">
+                    Seconday
+                </r-input-radio>
+                <br>
+                <r-input-radio v-model="radioValue" class="light x-large" option="light">
+                    Light
+                </r-input-radio>
+            </r-column>
+        </r-row>
 
         <hr>
 
         <h1>Switches</h1>
-        <r-input-switch class="primary small">
-            Primary
-        </r-input-switch>
-        <r-input-switch class="secondary medium">
-            Seconday
-        </r-input-switch>
-        <r-input-switch class="light large">
-            Light
-        </r-input-switch>
-        <r-input-switch class="primary x-large">
-            Primary
-        </r-input-switch>
+        <r-row>
+            <r-column>
+                <r-input-switch class="primary small">
+                    Primary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="secondary small">
+                    Secondary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="light small">
+                    Light
+                </r-input-switch>
+            </r-column>
+            <r-column>
+                <r-input-switch class="primary medium">
+                    Primary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="secondary medium">
+                    Secondary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="light medium">
+                    Light
+                </r-input-switch>
+            </r-column>
+            <r-column>
+                <r-input-switch class="primary large">
+                    Primary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="secondary large">
+                    Secondary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="light large">
+                    Light
+                </r-input-switch>
+            </r-column>
+            <r-column ratio="2">
+                <r-input-switch class="primary x-large">
+                    Primary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="secondary x-large">
+                    Secondary
+                </r-input-switch>
+                <br>
+                <r-input-switch class="light x-large">
+                    Light
+                </r-input-switch>
+            </r-column>
+        </r-row>
     </r-container>
 </template>
 <style lang="scss">
@@ -442,11 +571,11 @@ export default class Accordion extends Vue {
     isOverlayVisible = false;
 
     isLoaderVisible = {
-        spinner  : true,
-        ripple   : true,
-        ellipsis : true,
-        grid     : true,
-        custom   : true,
+        spinner  : false,
+        ripple   : false,
+        ellipsis : false,
+        grid     : false,
+        custom   : false,
     }
 
     radioValue = null;
