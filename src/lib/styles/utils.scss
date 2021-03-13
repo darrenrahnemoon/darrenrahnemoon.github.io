@@ -7,6 +7,10 @@
     user-select : none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.no-click {
+    pointer-events : none;
+}
+
 hr {
     margin : $large 0;
 

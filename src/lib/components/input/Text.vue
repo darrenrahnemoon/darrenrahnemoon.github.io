@@ -1,78 +1,170 @@
 <template>
-    <div class="input-text-container">
-        <label
-            v-if="this.$slots.default"
-            class="input-text-label"
-            :style="labelStyle"
-        >
-            <slot />
-        </label>
+    <div class="input text" :class="cssClasses">
         <input
-            v-if="type !== 'textarea'"
-            v-bind="$attrs"
-            :type="type"
+            v-if="variant !== 'textarea'"
             :value="value"
-            class="input-text"
-            @input="$emit('input', $event.target.value)"
-            @blur="checkValue()"
-            @focus="labelMoveUp()"
+            placeholder=""
+            v-bind="$attrs"
+            :type="variant"
+            @focus="localActive = true"
+            @blur="localActive = false"
+            @input="onInput"
         >
         <textarea
             v-else
-            v-bind="$attrs"
-            :rows="rows"
-            :cols="cols"
             :value="value"
-            :placeholder="placeholder"
-            class="input-text"
-            @input="$emit('input', $event.target.value)"
-            @blur="checkValue()"
-            @focus="labelMoveUp()"
+            v-bind="$attrs"
+            placeholder=""
+            :rows="$attrs.rows || 6"
+            @focus="localActive = true"
+            @blur="localActive = false"
+            @input="onInput"
         />
+        <label v-if="$slots.default || $attrs.placeholder">
+            {{ $attrs.placeholder }}
+            <slot />
+        </label>
     </div>
 </template>
 
 <script lang="ts">
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
-import { Component, Prop, Vue } from 'vue-property-decorator';
+export enum InputTextVariant {
+    Text = 'text',
+    TextArea = 'textarea',
+    //
+    Search = 'search',
+    Password = 'password',
+    Email = 'email',
+    Phone = 'tel',
+    Tel = 'tel', // backwards compatibility
+    Number = 'number',
+    //
+    Time = 'time',
+    Date = 'date',
+    Week = 'week',
+    Month = 'month',
+}
 
 @Component
 export default class InputText extends Vue {
-    @Prop()
-    value: string;
+    @Prop({ default : InputTextVariant.Text })
+    variant: InputTextVariant;
 
     @Prop()
-    type: string;
+    value: any;
 
-    labelStyle = {};
+    @Prop({ type : Boolean })
+    active: boolean;
+    localActive: boolean = false;
 
-    active = false;
+    @Watch('active')
+    onActiveChange(value: boolean) {
+        this.localActive = value;
+    }
 
-    labelMoveUp() {
-        this.labelStyle = {
-            bottom : '0',
+    onInput(event: InputEvent) {
+        this.$emit('input', (event.target as any).value);
+    }
+
+    focus() {
+        this.localActive = true;
+        this.$emit('input', true);
+    }
+
+    unfocus() {
+        this.localActive = false;
+        this.$emit('input', false);
+    }
+
+    get cssClasses() {
+        return {
+            // force the label to active when using the new datetime fields as they already have placeholders that disrupt the label
+            active : this.localActive || this.value || [ 'time', 'date', 'week', 'month' ].includes(this.variant),
         };
-        this.active = true;
-    }
-
-    labelMoveDown() {
-        this.labelStyle = {
-            bottom : '-27px',
-        };
-        this.active = false;
-    }
-
-    checkValue() {
-        if (this.value.length > 0) {
-            this.labelMoveUp();
-        }
-        else {
-            this.labelMoveDown();
-        }
-    }
-
-    mounted() {
-        this.checkValue();
     }
 }
 </script>
+<style lang="scss">
+.input.text {
+    display : block;
+    position : relative;
+    transition : all ease 0.25s;
+
+    margin : $medium / 4 0;
+
+    border-bottom : $thickness-primary solid $color-primary;
+
+    label {
+        display : inline-block;
+        position : absolute;
+
+        top : 50%;
+        left : $medium / 2;
+
+        transform : translateY(-50%);
+
+        transition : all ease 0.25s;
+
+        color : $color-primary;
+
+        font-size : $font-medium;
+
+
+        opacity : 0.5;
+
+        @extend .no-click;
+    }
+
+    input, textarea {
+        display : block;
+        transition : all ease 0.25s;
+
+        width : 100%;
+
+        padding : $medium / 2;
+
+        background-color : transparent;
+
+        color : $color-primary;
+
+        border : none;
+
+        font-family : $font-primary;
+        font-size : $font-medium;
+
+        box-sizing : border-box;
+
+        &:-webkit-autofill {
+            box-shadow : 0 0 0 1000px $color-compliment-primary inset;
+            -webkit-text-fill-color : $color-primary;
+        }
+
+        &:-webkit-autofill + label {
+            opacity : 0;
+        }
+    }
+
+    textarea {
+        resize : none;
+
+        & + label {
+            top : $medium;
+        }
+    }
+
+    &.active {
+        margin-top : $medium;
+
+        label {
+            top : 0;
+            left : 0;
+
+            font-size : $font-medium / 1.75;
+
+            opacity : 1 !important;
+        }
+    }
+}
+</style>

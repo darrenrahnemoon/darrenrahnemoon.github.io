@@ -556,6 +556,25 @@
                 </r-input-switch>
             </r-column>
         </r-row>
+
+        <hr>
+
+        <h1>Text Input</h1>
+        <r-row>
+            <r-column>
+                <r-input-text placeholder="Input Text" variant="text" />
+                <r-input-text placeholder="Input Textarea" variant="textarea" />
+                <r-input-text placeholder="Input Search" variant="search" />
+                <r-input-text placeholder="Input Password" variant="password" />
+                <r-input-text placeholder="Input Email" variant="email" />
+                <r-input-text placeholder="Input Tel" variant="tel" />
+                <r-input-text placeholder="Input Number" variant="number" />
+                <r-input-text placeholder="Input Time" variant="time" />
+                <r-input-text placeholder="Input Date" variant="date" />
+                <r-input-text placeholder="Input Week" variant="week" />
+                <r-input-text placeholder="Input Month" variant="month" />
+            </r-column>
+        </r-row>
     </r-container>
 </template>
 <style lang="scss">
@@ -579,6 +598,7 @@ export default class Accordion extends Vue {
     }
 
     radioValue = null;
+    textValue = null;
 
     @Watch('radioValue')
     onasdan() {

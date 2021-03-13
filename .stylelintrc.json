@@ -4,6 +4,7 @@
 		"stylelint-order"
 	],
     "rules": {
+        "no-descending-specificity": null,
         "block-no-empty" : true,
         "comment-no-empty": true,
         "color-no-hex": null,

@@ -1,6 +1,11 @@
 <template>
     <div class="item">
-        <div class="title" @click="toggle">
+        <div
+            class="title"
+            tabindex="1"
+            @click="toggle"
+            @keypress.enter="toggle"
+        >
             <div class="caret" :class="cssClasses">
                 <r-icon name="angle-down" />
             </div>
@@ -54,47 +59,60 @@ export default class AccordionItem extends Vue {
 
 <style lang="scss">
 .accordion .item {
-    border : 2px solid $color-primary;
-    border-bottom : none;
     margin-bottom : -2px;
+
     color : $color-primary;
 
+    border : 2px solid $color-primary;
+    border-bottom : none;
+
     .title {
-        padding : $small $medium;
-        cursor : pointer;
         transition : all ease 0.25s;
+
+        padding : $small $medium;
+
         background-color : rgba($color-primary, 0.1);
+
         border-bottom : 2px solid $color-primary;
 
-        &:hover {
-            color : $color-primary;
+        cursor : pointer;
+
+        outline : none !important;
+
+        &:hover, &:focus {
             background-color : rgba($color-primary, 0.3);
+            color : $color-primary;
         }
 
         &:active {
-            color : $color-dark;
             background-color : $color-primary;
+            color : $color-dark;
         }
     }
 
     .content {
         transition : all ease 0.25s;
-        background-color : transparent;
+
         padding : 0 $medium;
-        overflow : hidden;
+
+        background-color : transparent;
+
         max-height : 0;
+        overflow : hidden;
 
         &.active {
-            border-bottom : 2px solid $color-primary;
             padding : $medium;
+            border-bottom : 2px solid $color-primary;
+
             max-height : 10000px;
         }
     }
 
     .caret {
-        transition : all ease 0.25s;
-        float : right;
         transform : rotate(0deg);
+        transition : all ease 0.25s;
+
+        float : right;
 
         &.active {
             transform : rotate(180deg);
@@ -103,21 +121,21 @@ export default class AccordionItem extends Vue {
 
     @each $key, $value in $color {
         &.#{$key} {
-            border-color : $value;
             color : $value;
+            border-color : $value;
 
             .title {
                 background-color : rgba($value, 0.1);
                 border-bottom-color : $value;
 
-                &:hover {
-                    color : $value;
+                &:hover, &:focus {
                     background-color : rgba($value, 0.3);
+                    color : $value;
                 }
 
                 &:active {
-                    color : map-get($color-compliment, $key);
                     background-color : $value;
+                    color : map-get($color-compliment, $key);
                 }
             }
 

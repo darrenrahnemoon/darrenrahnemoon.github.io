@@ -4,6 +4,7 @@
         variant="button"
         class="input button"
         :class="cssClasses"
+        tabindex="1"
     >
         <span v-if="$slots.before" class="content-before">
             <slot name="before" />

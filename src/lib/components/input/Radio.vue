@@ -93,6 +93,16 @@ export default class InputRadio extends Vue {
         }
     }
 
+    &:hover, &:focus {
+        .check {
+            background-color : rgba($color-primary, 0.3);
+        }
+    }
+
+    &:active .check {
+        background-color : $color-primary;
+    }
+
     input {
         display : none;
 
@@ -105,16 +115,8 @@ export default class InputRadio extends Vue {
         }
     }
 
-    &:hover ~ .check, &:focus ~ .check {
-        background-color : rgba($color-primary, 0.3);
-    }
-
     &:active {
         transform : scale(0.9, 0.9);
-    }
-
-    &:active ~ .check {
-        background-color : $color-primary;
     }
 
     @each $key, $value in $color {
@@ -135,11 +137,13 @@ export default class InputRadio extends Vue {
                 }
             }
 
-            &:hover ~ .check, &:focus ~ .check {
-                background-color : rgba($value, 0.3);
+            &:hover, &:focus {
+                .check {
+                    background-color : rgba($value, 0.3);
+                }
             }
 
-            &:active ~ .check {
+            &:active .check {
                 background-color : $value;
             }
         }
