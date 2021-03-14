@@ -31,6 +31,15 @@ _.mixin(_, {
 export default _;
 
 export const VueLodashMixin = {
+    filters : _.pick(_, [
+        'capitalize',
+        'startCase',
+        'camelCase',
+        'kebabCase',
+        'snakeCase',
+        'upperCase',
+        'lowerCase',
+    ]),
     computed : {
         _ : () => _,
     },

@@ -45,7 +45,7 @@ export default class InputRadio extends Vue {
 </script>
 <style lang="scss">
 .input.radio {
-    display : inline-block;
+    display : block;
     transition : all ease 0.25s;
 
     margin : $medium / 4 0;

@@ -166,5 +166,24 @@ export default class InputText extends Vue {
             opacity : 1 !important;
         }
     }
+
+    @each $key, $value in $color {
+        &.#{$key} {
+            border-color : $value;
+
+            label {
+                color : $value;
+            }
+
+            input, textarea {
+                color : $value;
+
+                &:-webkit-autofill {
+                    box-shadow : 0 0 0 1000px map-get($color-compliment, $key) inset;
+                    -webkit-text-fill-color : $value;
+                }
+            }
+        }
+    }
 }
 </style>

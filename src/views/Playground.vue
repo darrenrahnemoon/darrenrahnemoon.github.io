@@ -383,56 +383,9 @@
         <!-- Checkbox -->
         <h1>Checkboxes</h1>
         <r-row>
-            <r-column>
-                <r-input-checkbox class="primary small">
-                    Primary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="secondary small">
-                    Secondary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="light small">
-                    Light
-                </r-input-checkbox>
-            </r-column>
-            <r-column>
-                <r-input-checkbox class="primary medium">
-                    Primary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="secondary medium">
-                    Secondary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="light medium">
-                    Light
-                </r-input-checkbox>
-            </r-column>
-            <r-column>
-                <r-input-checkbox class="primary large">
-                    Primary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="secondary large">
-                    Secondary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="light large">
-                    Light
-                </r-input-checkbox>
-            </r-column>
-            <r-column ratio="2">
-                <r-input-checkbox class="primary x-large">
-                    Primary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="secondary x-large">
-                    Secondary
-                </r-input-checkbox>
-                <br>
-                <r-input-checkbox class="light x-large">
-                    Light
+            <r-column v-for="(size, index) in sizes" :key="index">
+                <r-input-checkbox v-for="(color, index2) in colors" :key="index2" :class="[ color, size ]">
+                    {{ color | startCase }}
                 </r-input-checkbox>
             </r-column>
         </r-row>
@@ -445,56 +398,14 @@
             Value: {{ radioValue }}
         </div>
         <r-row>
-            <r-column>
-                <r-input-radio v-model="radioValue" class="primary small" option="primary">
-                    Primary
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="secondary small" option="secondary">
-                    Seconday
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="light small" option="light">
-                    Light
-                </r-input-radio>
-            </r-column>
-            <r-column>
-                <r-input-radio v-model="radioValue" class="primary medium" option="primary">
-                    Primary
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="secondary medium" option="secondary">
-                    Seconday
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="light medium" option="light">
-                    Light
-                </r-input-radio>
-            </r-column>
-            <r-column>
-                <r-input-radio v-model="radioValue" class="primary large" option="primary">
-                    Primary
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="secondary large" option="secondary">
-                    Seconday
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="light large" option="light">
-                    Light
-                </r-input-radio>
-            </r-column>
-            <r-column>
-                <r-input-radio v-model="radioValue" class="primary x-large" option="primary">
-                    Primary
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="secondary x-large" option="secondary">
-                    Seconday
-                </r-input-radio>
-                <br>
-                <r-input-radio v-model="radioValue" class="light x-large" option="light">
-                    Light
+            <r-column v-for="(size, index) in sizes" :key="index">
+                <r-input-radio
+                    v-for="(color, index2) in colors"
+                    :key="index2"
+                    :class="[ color, size ]"
+                    option="color"
+                >
+                    {{ color | startCase }}
                 </r-input-radio>
             </r-column>
         </r-row>
@@ -503,56 +414,9 @@
 
         <h1>Switches</h1>
         <r-row>
-            <r-column>
-                <r-input-switch class="primary small">
-                    Primary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="secondary small">
-                    Secondary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="light small">
-                    Light
-                </r-input-switch>
-            </r-column>
-            <r-column>
-                <r-input-switch class="primary medium">
-                    Primary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="secondary medium">
-                    Secondary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="light medium">
-                    Light
-                </r-input-switch>
-            </r-column>
-            <r-column>
-                <r-input-switch class="primary large">
-                    Primary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="secondary large">
-                    Secondary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="light large">
-                    Light
-                </r-input-switch>
-            </r-column>
-            <r-column ratio="2">
-                <r-input-switch class="primary x-large">
-                    Primary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="secondary x-large">
-                    Secondary
-                </r-input-switch>
-                <br>
-                <r-input-switch class="light x-large">
-                    Light
+            <r-column v-for="(size, index) in sizes" :key="index">
+                <r-input-switch v-for="(color, index2) in colors" :key="index2" :class="[ color, size ]">
+                    {{ color | startCase }}
                 </r-input-switch>
             </r-column>
         </r-row>
@@ -561,18 +425,18 @@
 
         <h1>Text Input</h1>
         <r-row>
-            <r-column>
-                <r-input-text placeholder="Input Text" variant="text" />
-                <r-input-text placeholder="Input Textarea" variant="textarea" />
-                <r-input-text placeholder="Input Search" variant="search" />
-                <r-input-text placeholder="Input Password" variant="password" />
-                <r-input-text placeholder="Input Email" variant="email" />
-                <r-input-text placeholder="Input Tel" variant="tel" />
-                <r-input-text placeholder="Input Number" variant="number" />
-                <r-input-text placeholder="Input Time" variant="time" />
-                <r-input-text placeholder="Input Date" variant="date" />
-                <r-input-text placeholder="Input Week" variant="week" />
-                <r-input-text placeholder="Input Month" variant="month" />
+            <r-column v-for="(color, index) in colors" :key="index" class="p-sm">
+                <r-input-text placeholder="Input Text" variant="text" :class="color" />
+                <r-input-text placeholder="Input Textarea" variant="textarea" :class="color" />
+                <r-input-text placeholder="Input Search" variant="search" :class="color" />
+                <r-input-text placeholder="Input Password" variant="password" :class="color" />
+                <r-input-text placeholder="Input Email" variant="email" :class="color" />
+                <r-input-text placeholder="Input Tel" variant="tel" :class="color" />
+                <r-input-text placeholder="Input Number" variant="number" :class="color" />
+                <r-input-text placeholder="Input Time" variant="time" :class="color" />
+                <r-input-text placeholder="Input Date" variant="date" :class="color" />
+                <r-input-text placeholder="Input Week" variant="week" :class="color" />
+                <r-input-text placeholder="Input Month" variant="month" :class="color" />
             </r-column>
         </r-row>
     </r-container>
@@ -583,7 +447,7 @@
 }
 </style>
 <script lang="ts">
-import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Accordion extends Vue {
@@ -600,13 +464,12 @@ export default class Accordion extends Vue {
     radioValue = null;
     textValue = null;
 
-    @Watch('radioValue')
-    onasdan() {
-        console.log(this.radioValue);
-    }
-
     get colors() {
         return  [ 'primary', 'secondary', 'light' ];
+    }
+
+    get sizes() {
+        return [ 'small', 'medium', 'large', 'x-large' ];
     }
 }
 </script>
