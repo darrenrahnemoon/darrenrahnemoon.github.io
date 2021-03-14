@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Jura');
+
+// h1....h6 font size mapping
+$header-font-size: (
+    '1' : $font-xx-large,
+    '2' : $font-x-large,
+    '3' : $font-large,
+    '4' : $font-medium,
+    '5' : $font-small,
+    '6' : $font-x-small,
+);
+
+@each $size, $value in $header-font-size {
+    h#{$size}, .h#{$size} {
+        margin-top : 0;
+        font-size : $value;
+    }
+}
+
+@each $key, $value in $font {
+    .font-#{$key} {
+        @if (type-of($value) == 'number') {
+            font-size : $value;
+        }
+
+        @else {
+            font-family : $value;
+        }
+    }
+}
+
+mark, .mark, .highlight {
+    background-color : $color-primary;
+    color : $color-compliment-primary;
+
+    @each $key, $value in $color {
+        &.#{$key} {
+            background-color : $value;
+            color : map-get($color-compliment, $key);
+        }
+    }
+}
+
+del, s, .strikethrough {
+    text-decoration : line-through;
+}
+
+u, ins, .underline {
+    text-decoration : underline;
+}
+
+.overline {
+    text-decoration : overline;
+}
+
+strong, b, .bold {
+    font-weight : bold;
+
+    -webkit-text-stroke-width : 1px;
+}
+
+em, i, .italics {
+    font-style : italic;
+}
+
+figure {
+    margin : 0;
+
+    blockquote {
+        font-size : $font-xx-large;
+
+        & ~ figcaption, .caption {
+            &::before {
+                content : "—";
+            }
+        }
+    }
+
+    figcaption, .caption {
+        opacity : 0.8;
+    }
+}
+
+blockquote {
+    margin : 0;
+
+    &::before {
+        content : open-quote;
+    }
+
+    &::after {
+        content : close-quote;
+    }
+}
+
+ul {
+    &.disc {
+        list-style-type : disc;
+    }
+
+    &.circle {
+        list-style-type : circle;
+    }
+
+    &.square {
+        list-style-type : square;
+    }
+
+    &.no-bullet-points {
+        list-style-type : none;
+    }
+}
+
+ol {
+    &.decimal {
+        list-style-type : decimal;
+    }
+
+    &.alpha {
+        list-style-type : upper-alpha;
+
+        &.lower {
+            list-style-type : lower-alpha;
+        }
+
+        &.upper {
+            list-style-type : upper-alpha;
+        }
+    }
+
+    &.roman {
+        list-style-type : upper-roman;
+
+        &.lower {
+            list-style-type : lower-roman;
+        }
+
+        &.upper {
+            list-style-type : upper-roman;
+        }
+    }
+
+    &.no-bullet-points {
+        list-style-type : none;
+    }
+}

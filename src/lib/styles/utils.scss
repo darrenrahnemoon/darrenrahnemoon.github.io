@@ -34,4 +34,9 @@ hr {
             margin : $value 0;
         }
     }
+
+    &.hidden {
+        background-color : transparent !important;
+        border-color : transparent !important;
+    }
 }
