@@ -7,7 +7,7 @@
             @keypress.enter="toggle"
         >
             <div class="caret" :class="cssClasses">
-                <r-icon name="angle-down" />
+                <icon name="angle-down" />
             </div>
             <slot name="title" />
         </div>

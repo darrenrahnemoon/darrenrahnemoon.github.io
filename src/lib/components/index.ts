@@ -22,7 +22,7 @@ import Icon from './Icon.vue';
 import Loaders from '$/lib/components/loaders';
 import Transitions from '$/lib/animations/transitions';
 
-const prefix = 'r-';
+const prefix = '';
 
 // Layouts
 Vue.component(`${prefix}row`, Row);
