@@ -21,4 +21,17 @@ hr {
 
     border-style : solid;
     border-width : $thickness-primary;
+
+    @each $key, $value in $color {
+        &.#{$key} {
+            background-color : $value;
+            border-color : $value;
+        }
+    }
+
+    @each $key, $value in $spacing {
+        &.#{$key} {
+            margin : $value 0;
+        }
+    }
 }

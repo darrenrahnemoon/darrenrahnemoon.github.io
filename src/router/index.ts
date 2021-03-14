@@ -14,7 +14,7 @@ export const routes = _({
     playground : {
         visible   : process.env.NODE_ENV !== 'production',
         path      : '/playground',
-        component : () => import(/* webpackChunkName: "playground" */ '../views/Playground.vue'),
+        component : () => import(/* webpackChunkName: "playground" */ '../views/playground/Playground.vue'),
     },
 } as Record<string, Route>)
     .pickBy(route => [ true, undefined ].includes(route.visible))

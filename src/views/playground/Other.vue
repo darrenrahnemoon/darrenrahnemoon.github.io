@@ -402,8 +402,9 @@
                 <r-input-radio
                     v-for="(color, index2) in colors"
                     :key="index2"
+                    v-model="radioValue"
                     :class="[ color, size ]"
-                    option="color"
+                    :option="color"
                 >
                     {{ color | startCase }}
                 </r-input-radio>

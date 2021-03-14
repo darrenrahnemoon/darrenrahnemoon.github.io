@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Jura');
 
 // h1....h6 font size mapping
-$font-size: (
+$header-font-size: (
     '1' : $font-xx-large,
     '2' : $font-x-large,
     '3' : $font-large,
@@ -10,9 +10,21 @@ $font-size: (
     '6' : $font-x-small,
 );
 
-@each $size, $value in $font-size {
+@each $size, $value in $header-font-size {
     h#{$size}, .h#{$size} {
         margin-top : 0;
         font-size : $value;
+    }
+}
+
+@each $key, $value in $font {
+    .font-#{$key} {
+        @if (type-of($value) == 'number') {
+            font-size : $value;
+        }
+
+        @else {
+            font-family : $value;
+        }
     }
 }

@@ -69,6 +69,8 @@ export default class InputCheckbox extends Vue {
 
     font-size : $font-medium;
 
+    cursor : pointer;
+
     .check {
         display : inline-block;
         position : relative;
