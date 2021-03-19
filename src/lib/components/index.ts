@@ -1,25 +1,25 @@
 import Vue from 'vue';
 
-import Row from './layout/Row.vue';
-import Column from './layout/Column.vue';
+import Row       from './layout/Row.vue';
+import Column    from './layout/Column.vue';
 import Container from './layout/Container.vue';
 
-import InputButton from './input/Button.vue';
+import InputButton   from './input/Button.vue';
 import InputCheckbox from './input/Checkbox.vue';
-import InputRadio from './input/Radio.vue';
-import InputText from './input/Text.vue';
-import InputSwitch from './input/Switch.vue';
+import InputRadio    from './input/Radio.vue';
+import InputText     from './input/Text.vue';
+import InputSwitch   from './input/Switch.vue';
 
-import Accordion from './Accordion.vue';
+import Accordion     from './Accordion.vue';
 import AccordionItem from './AccordionItem.vue';
-import AlertBox from './AlertBox.vue';
+import AlertBox      from './AlertBox.vue';
 
-import Overlay from './Overlay.vue';
-import Modal from './Modal.vue';
+import Overlay     from './Overlay.vue';
+import Modal       from './Modal.vue';
 import ProgressBar from './ProgressBar.vue';
-import Icon from './Icon.vue';
+import Icon        from './Icon.vue';
 
-import Loaders from '$/lib/components/loaders';
+import Loaders     from '$/lib/components/loaders';
 import Transitions from '$/lib/animations/transitions';
 
 const prefix = '';

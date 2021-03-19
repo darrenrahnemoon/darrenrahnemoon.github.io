@@ -26,11 +26,11 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-import Layouts from './Layouts.vue';
-import Typography from './Typography.vue';
-import Icons from './Icons.vue';
+import Layouts      from './Layouts.vue';
+import Typography   from './Typography.vue';
+import Icons        from './Icons.vue';
 import ProgressBars from './ProgressBars.vue';
-import AlertBoxes from './AlertBoxes.vue';
+import AlertBoxes   from './AlertBoxes.vue';
 
 @Component
 export default class Playground extends Vue {

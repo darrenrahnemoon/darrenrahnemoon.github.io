@@ -16,7 +16,7 @@ module.exports = {
 
     env : { es6 : true },
 
-    plugins : [ '@typescript-eslint' ],
+    plugins : [ '@typescript-eslint', 'align-import' ],
 
     rules : {
         // Possible Errors
@@ -54,16 +54,17 @@ module.exports = {
         'func-style'               : [ 'error', 'declaration', { allowArrowFunctions : true } ],
 
         // automatically fixable
-        'no-undef'              : 'off',
-        'no-unsafe-negation'    : [ 'error' ],
-        'dot-location'          : [ 'error', 'property' ],
-        'dot-notation'          : [ 'error', { allowPattern : '^[A-Za-z]+(_[A-Za-z0-9]+)+$' } ],
-        'no-extra-bind'         : [ 'error' ],
-        'no-floating-decimal'   : [ 'error' ],
-        'no-implicit-coercion'  : [ 'error', { allow : [ '!!' ] } ],
-        'yoda'                  : [ 'error' ],
-        'no-undef-init'         : [ 'error' ],
-        'array-bracket-spacing' : [
+        'align-import/align-import' : [ 'error' ],
+        'no-undef'                  : 'off',
+        'no-unsafe-negation'        : [ 'error' ],
+        'dot-location'              : [ 'error', 'property' ],
+        'dot-notation'              : [ 'error', { allowPattern : '^[A-Za-z]+(_[A-Za-z0-9]+)+$' } ],
+        'no-extra-bind'             : [ 'error' ],
+        'no-floating-decimal'       : [ 'error' ],
+        'no-implicit-coercion'      : [ 'error', { allow : [ '!!' ] } ],
+        'yoda'                      : [ 'error' ],
+        'no-undef-init'             : [ 'error' ],
+        'array-bracket-spacing'     : [
             'error',
             'always',
             { objectsInArrays : true, arraysInArrays : true },

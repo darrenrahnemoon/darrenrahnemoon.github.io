@@ -1,18 +1,23 @@
 .#{$la-css-prefix}-stack {
     display : inline-block;
-    height : 2em;
-    line-height : 2em;
     position : relative;
-    vertical-align : middle;
+
     width : 2.5em;
+    height : 2em;
+
+    vertical-align : middle;
+
+    line-height : 2em;
 }
 
 .#{$la-css-prefix}-stack-1x,
 .#{$la-css-prefix}-stack-2x {
-    left : 0;
     position : absolute;
-    text-align : center;
+    left : 0;
+
     width : 100%;
+
+    text-align : center;
 }
 
 .#{$la-css-prefix}-stack-1x {

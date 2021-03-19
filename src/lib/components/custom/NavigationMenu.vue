@@ -41,8 +41,8 @@
     </div>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import $ from 'jquery';
+import { Component, Prop, Vue }                   from 'vue-property-decorator';
+import $                                          from 'jquery';
 import {
     TimelineMax, TweenMax, Power0, Power4, Expo
 } from 'gsap';

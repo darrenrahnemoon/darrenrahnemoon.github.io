@@ -1,7 +1,7 @@
-import Spinner from './Spinner.vue';
-import Ripple from './Ripple.vue';
+import Spinner  from './Spinner.vue';
+import Ripple   from './Ripple.vue';
 import Ellipsis from './Ellipsis.vue';
-import Grid from './Grid.vue';
+import Grid     from './Grid.vue';
 
 export default {
     Spinner,

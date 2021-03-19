@@ -32,8 +32,8 @@
     </div>
 </template>
 <script lang="ts">
-import { mixins } from 'vue-class-component';
-import { Component } from 'vue-property-decorator';
+import { mixins }         from 'vue-class-component';
+import { Component }      from 'vue-property-decorator';
 import { BasePlayground } from './BasePlayground';
 
 @Component

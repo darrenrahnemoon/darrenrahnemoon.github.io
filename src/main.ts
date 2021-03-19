@@ -2,9 +2,9 @@ import Vue from 'vue';
 import '$/lib/serviceWorker';
 import '$/lib/extensions';
 import '$/lib/components';
-import router from '$/router';
 
-import App from '$/views/App.vue';
+import router from '$/router';
+import App    from '$/views/App.vue';
 
 Vue.config.productionTip = false;
 new Vue({

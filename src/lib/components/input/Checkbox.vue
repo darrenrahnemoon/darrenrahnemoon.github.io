@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { Debounce } from '$/lib/utilities/debounce';
+import { Debounce }                    from '$/lib/utilities/debounce';
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 
 @Component

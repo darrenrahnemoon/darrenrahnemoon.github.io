@@ -70,12 +70,15 @@ export default class Overlay extends Vue {
 <style lang="scss">
 .overlay {
     position : absolute;
-    transition : all ease 0.25s;
     top : 0;
     left : 0;
-    text-align : center;
+    transition : all ease 0.25s;
+
     width : 100%;
     height : 100%;
+
+    text-align : center;
+
     pointer-events : none;
 
     & > * {
@@ -91,6 +94,7 @@ export default class Overlay extends Vue {
 
     &.fixed {
         position : fixed;
+
         z-index : 9998;
 
         & > * {

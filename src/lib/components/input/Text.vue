@@ -33,14 +33,14 @@ import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 export enum InputTextVariant {
     Text = 'text',
     TextArea = 'textarea',
-    //
+
     Search = 'search',
     Password = 'password',
     Email = 'email',
     Phone = 'tel',
     Tel = 'tel', // backwards compatibility
     Number = 'number',
-    //
+
     Time = 'time',
     Date = 'date',
     Week = 'week',

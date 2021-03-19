@@ -1,5 +1,5 @@
-import Fade from './Fade.vue';
-import SlideFade from './SlideFade.vue';
+import Fade       from './Fade.vue';
+import SlideFade  from './SlideFade.vue';
 import SlideScale from './SlideScale.vue';
 
 export default {

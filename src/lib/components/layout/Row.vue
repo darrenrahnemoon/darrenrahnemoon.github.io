@@ -68,8 +68,9 @@ export default class Row extends Vue {
 </script>
 <style lang="scss">
 .row {
-    padding : 0;
     display : flex;
+    padding : 0;
+
     flex-wrap : wrap;
 
     &.horizontal {

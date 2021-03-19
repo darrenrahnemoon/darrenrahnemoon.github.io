@@ -59,11 +59,11 @@ export default class AlertBox extends Vue {
     transition : all ease 0.25s;
 
     margin : $x-small 0;
-    //
+
     padding : $small $small + $x-small;
 
     background-color : transparent;
-    //
+
     color : $color-primary;
 
     border-right : $x-small solid $color-primary;
@@ -72,10 +72,9 @@ export default class AlertBox extends Vue {
     font-size : $font-small;
 
     max-height : 1000px;
-    //
+
     overflow : hidden;
     text-overflow : ellipsis;
-    transform-origin : top left;
 
     @extend .no-select;
 

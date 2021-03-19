@@ -3,7 +3,7 @@ export enum EnvironmentType {
     Development = 'development'
 }
 
-export class Enviornment {
+export class Environment {
     static get isProduction() {
         return process.env.NODE_ENV === EnvironmentType.Production;
     }

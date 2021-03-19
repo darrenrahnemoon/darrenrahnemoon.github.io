@@ -1,7 +1,7 @@
-import _                           from 'lodash';
-import Vue                         from 'vue';
-import VueRouter, { RouteConfig }  from 'vue-router';
-import { Enviornment } from '$/lib/utilities/environment';
+import _                          from 'lodash';
+import Vue                        from 'vue';
+import VueRouter, { RouteConfig } from 'vue-router';
+import { Environment }            from '$/lib/utilities/environment';
 
 Vue.use(VueRouter);
 
@@ -13,7 +13,7 @@ export const routes = _({
     rants   : { path : '/rants', component : () => import(/* webpackChunkName: "about" */ '../views/Rants.vue') },
 
     playground : {
-        visible   : !Enviornment.isProduction,
+        visible   : !Environment.isProduction,
         path      : '/playground',
         component : () => import(/* webpackChunkName: "playground" */ '../views/playground/Playground.vue'),
     },
