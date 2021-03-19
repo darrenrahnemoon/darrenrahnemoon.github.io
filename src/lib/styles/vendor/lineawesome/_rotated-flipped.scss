@@ -49,39 +49,45 @@
 }
 
 .la-rotate-90 {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
     -webkit-transform : rotate(90deg);
     transform : rotate(90deg);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
 }
 
 .la-rotate-180 {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
     -webkit-transform : rotate(180deg);
     transform : rotate(180deg);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
 }
 
 .la-rotate-270 {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
     -webkit-transform : rotate(270deg);
     transform : rotate(270deg);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
 }
 
 .la-flip-horizontal {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
     -webkit-transform : scale(-1, 1);
     transform : scale(-1, 1);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
 }
 
 .la-flip-vertical {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
     -webkit-transform : scale(1, -1);
     transform : scale(1, -1);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
 }
 
 .la-flip-both, .la-flip-horizontal.la-flip-vertical {
-    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
     -webkit-transform : scale(-1, -1);
     transform : scale(-1, -1);
+
+    -ms-filter : "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
 }
 
 :root .la-rotate-90, :root .la-rotate-180, :root .la-rotate-270, :root .la-flip-horizontal, :root .la-flip-vertical, :root .la-flip-both {

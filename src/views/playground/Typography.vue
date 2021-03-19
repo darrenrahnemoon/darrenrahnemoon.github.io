@@ -1,5 +1,7 @@
 <template>
     <div>
+        <h1>Typography</h1>
+
         <!-- Headers  -->
         <h1>H1: Welcome to the playground</h1>
         <h2>H2: Welcome to the playground</h2>
@@ -15,7 +17,7 @@
             v-for="size in sizes"
             :key="size"
             :class="`font-${size}`"
-            class="py-sm"
+            class="my-sm"
         >
             {{ size | startCase }}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus earum veniam vitae saepe ullam omnis, blanditiis dignissimos tempora facilis quaerat minima, sit enim, expedita voluptas sapiente totam aperiam in.
         </div>
@@ -27,7 +29,7 @@
             v-for="color in colors"
             :key="color"
             :class="`tc-${color}`"
-            class="py-sm"
+            class="my-sm"
         >
             {{ color | startCase }}: Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis natus earum veniam vitae saepe ullam omnis, blanditiis dignissimos tempora facilis quaerat minima, sit enim, expedita voluptas sapiente totam aperiam in.
         </div>
@@ -102,69 +104,59 @@
         <!-- Lists -->
         <row>
             <column>
-                <ul class="square">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>
-                        Item 4
-                        <ul class="circle">
-                            <li>Sub Item 1</li>
-                            <li>Sub Item 2</li>
-                            <li>
-                                Sub Item 3
-                                <ul class="disc">
-                                    <li>SubSub Item 1</li>
-                                    <li>SubSub Item 2</li>
-                                    <li>SubSub Item 3</li>
-                                    <li>SubSub Item 4</li>
-                                </ul>
-                            </li>
-                            <li>Sub Item 4</li>
-                        </ul>
+                <ul class="disc">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
                     </li>
-                    <li>Item 5</li>
                 </ul>
             </column>
             <column>
-                <ol class="alpha">
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                    <li>
-                        Item 4
-                        <ol class="roman">
-                            <li>Sub Item 1</li>
-                            <li>Sub Item 2</li>
-                            <li>
-                                Sub Item 3
-                                <ol class="decimal">
-                                    <li>SubSub Item 1</li>
-                                    <li>SubSub Item 2</li>
-                                    <li>SubSub Item 3</li>
-                                    <li>SubSub Item 4</li>
-                                </ol>
-                            </li>
-                            <li>Sub Item 4</li>
-                        </ol>
+                <ul class="circle">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
                     </li>
-                    <li>Item 5</li>
+                </ul>
+            </column>
+            <column>
+                <ul class="square">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
+                    </li>
+                </ul>
+            </column>
+            <column>
+                <ol class="decimal">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
+                    </li>
+                </ol>
+            </column>
+            <column>
+                <ol class="roman">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
+                    </li>
+                </ol>
+            </column>
+            <column>
+                <ol class="alpha">
+                    <li v-for="index in 10" :key="index">
+                        Item {{ index }}
+                    </li>
                 </ol>
             </column>
         </row>
     </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { mixins } from 'vue-class-component';
+import { Component } from 'vue-property-decorator';
+import { BasePlayground } from './BasePlayground';
 
 @Component
-export default class Typography extends Vue {
-    get sizes() {
-        return [ 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large' ];
-    }
-
-    get colors() {
-        return [ 'primary', 'secondary', 'light' ];
+export default class Typography extends mixins(BasePlayground) {
+    mounted() {
+        console.log(this);
     }
 }
 </script>

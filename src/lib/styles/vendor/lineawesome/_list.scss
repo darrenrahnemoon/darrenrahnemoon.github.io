@@ -1,6 +1,7 @@
 .#{$la-css-prefix}-ul {
-    padding-left : 0;
     margin-left : $la-li-width;
+    padding-left : 0;
+
     list-style-type : none;
 
     > li {
@@ -11,8 +12,11 @@
 .#{$la-css-prefix}-li {
     position : absolute;
     left : -2em;
-    text-align : center;
+
     width : $la-li-width;
+
+    text-align : center;
+
     line-height : inherit;
     &.#{$la-css-prefix}-lg {
         left : -$la-li-width + (4em / 14);

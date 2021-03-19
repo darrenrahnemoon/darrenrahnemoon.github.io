@@ -39,13 +39,18 @@ export default class ProgressBar extends Vue {
 .progress-bar {
     .bar {
         transition : all ease 0.5s;
+
         height : 100%;
+
+        margin : $medium / 4 0;
+
         background-color : $color-primary;
+
         content : "";
     }
 
     &.horizontal {
-        height : $small;
+        height : $medium / 2;
 
         .bar {
             width : 0;
@@ -55,14 +60,28 @@ export default class ProgressBar extends Vue {
     &.vertical {
         display : inline-block;
         position : relative;
-        width : $small;
-        height : $x-large;
+
+        width : $medium / 2;
+        height : $medium * 8;
 
         .bar {
             position : absolute;
+            bottom : 0;
+
             width : 100%;
             height : 0;
-            bottom : 0;
+        }
+    }
+
+    @each $key, $value in $spacing {
+        &.#{$key} {
+            &.horizontal {
+                height : $value;
+            }
+
+            &.vertical {
+                width : $value;
+            }
         }
     }
 

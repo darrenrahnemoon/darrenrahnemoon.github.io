@@ -1,18 +1,19 @@
 <template>
-    <transition-slide-fade>
-        <div
-            v-if="localVisible"
-            class="alert"
-            v-bind="$attrs"
-            :class="cssClasses"
-            v-on="$listeners"
-        >
-            <div v-if="dismissable" class="dismiss" @click="hide">
-                <icon name="times" />
-            </div>
-            <slot />
+    <div
+        v-if="localVisible"
+        class="alert"
+        v-bind="$attrs"
+        :class="cssClasses"
+        v-on="$listeners"
+    >
+        <div v-if="dismissable" class="dismiss" @click="hide">
+            <icon name="times" />
         </div>
-    </transition-slide-fade>
+        <div v-if="$slots.title" class="title">
+            <slot name="title" />
+        </div>
+        <slot />
+    </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
@@ -74,6 +75,7 @@ export default class AlertBox extends Vue {
     //
     overflow : hidden;
     text-overflow : ellipsis;
+    transform-origin : top left;
 
     @extend .no-select;
 

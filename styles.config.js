@@ -4,11 +4,12 @@ const _ = require('lodash');
 // Colors
 const colors = {
     primary   : { value : '#D1AF62', compliment : 'dark' },
-    secondary : { value : '#749C45', compliment : 'light' },
+    secondary : { value : '#34495E', compliment : 'light' },
+    tertiary  : { value : '#749C45', compliment : 'light' },
     dark      : { value : '#1E1E1E', compliment : 'light' },
-    darker    : { value : '#111',    compliment : 'light' },
+    darker    : { value : '#111111', compliment : 'light' },
     light     : { value : '#EFEFEF', compliment : 'dark' },
-    lighter   : { value : '#EEE',    compliment : 'darker' },
+    lighter   : { value : '#EEEEEE', compliment : 'darker' },
 };
 
 // Fonts

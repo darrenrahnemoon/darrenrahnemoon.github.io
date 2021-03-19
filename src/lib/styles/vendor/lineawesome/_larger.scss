@@ -1,7 +1,8 @@
 .#{$la-css-prefix}-lg {
     font-size : 1.33333em;
-    line-height : 0.75em;
     vertical-align : -0.0667em;
+
+    line-height : 0.75em;
 }
 
 .#{$la-css-prefix}-xs { font-size : 0.75em; }
@@ -17,6 +18,6 @@
 .#{$la-css-prefix}-10x { font-size : 10em; }
 
 .#{$la-css-prefix}-fw {
-    text-align : center;
     width : 1.25em;
+    text-align : center;
 }

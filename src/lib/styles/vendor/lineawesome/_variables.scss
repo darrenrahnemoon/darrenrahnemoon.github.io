@@ -1,8 +1,8 @@
 $la-font-path: "/assets/fonts/lineawesome" !default;
-$la-font-size-base: 14px !default;
+$la-font-size-base: $font-medium !default;
 $la-line-height-base: 1 !default;
-$la-border-color: #EEE !default;
-$la-inverse: #FFF !default;
+$la-border-color: $color-light !default;
+$la-inverse: $color-light !default;
 $la-version: 1.3 !default;
 $la-li-width: (20em / 14) !default;
 

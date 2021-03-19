@@ -2,9 +2,9 @@
 // -------------------------
 
 .#{$la-css-prefix}-border {
+    padding : 0.2em 0.25em 0.15em;
     border : solid 0.08em #EEE;
     border-radius : 0.1em;
-    padding : 0.2em 0.25em 0.15em;
 }
 
 .#{$la-css-prefix}-pull-left { float : left; }

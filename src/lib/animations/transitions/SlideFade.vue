@@ -18,20 +18,14 @@ export enum SlideDirection {
 }
 
 @Component
-export default class SlideTransition extends Vue {
+export default class SlideFadeTransition extends Vue {
     @Prop({ default : SlideDirection.Down })
     direction: SlideDirection;
 }
 </script>
 
 <style lang="scss">
-.slide-fade-enter-active {
-    transition : all 0.3s ease;
-}
 
-.slide-fade-leave-active {
-    transition : all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
 
 $slide-direction: (
     'up'    : translateY(-100px),
@@ -40,9 +34,18 @@ $slide-direction: (
     'left'  : translateX(-100px)
 );
 
+.slide-fade-enter-active {
+    transition : all 0.3s ease;
+}
+
+.slide-fade-leave-active {
+    transition : all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
 @each $direction, $property in $slide-direction {
     .slide-fade-enter-#{$direction}, .slide-fade-leave-to-#{$direction} {
         transform : $property;
+
         opacity : 0;
     }
 }
