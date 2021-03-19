@@ -2,6 +2,7 @@ import _ from 'lodash';
 import ScrollMagic from 'scrollmagic';
 import type { TriggerHook } from 'scrollmagic';
 import { ScrollMagicPluginIndicator } from 'scrollmagic-plugins';
+import { Enviornment } from '$/lib/utilities/environment';
 
 // Scroll magic plugins
 ScrollMagicPluginIndicator(ScrollMagic);
@@ -41,7 +42,7 @@ export const VueScrollAnimationMixin = {
                 scene.setClassToggle(this.$refs[toggleClass.target] || toggleClass.target, toggleClass.class);
             }
 
-            if (process.env.NODE_ENV !== 'production') {
+            if (!Enviornment.isProduction) {
                 scene.addIndicators({ name : key });
             }
 
