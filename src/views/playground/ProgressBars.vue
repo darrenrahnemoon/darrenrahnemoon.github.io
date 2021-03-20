@@ -7,9 +7,9 @@
         <div v-for="(size, index1) in sizes" :key="index1">
             <h3>{{ size | startCase }}</h3>
             <progress-bar
-                v-for="(color, index2) in colors"
-                :key="index2"
-                :progress="(index2 + 1) * 15"
+                v-for="(color, index) in colors"
+                :key="`horizontal-${index}`"
+                :progress="(index + 1) * 15"
                 :class="[ color, size ]"
             />
             <hr class="hidden medium">
@@ -21,10 +21,10 @@
         <div v-for="(size, index1) in sizes" :key="index1">
             <h3>{{ size | startCase }}</h3>
             <progress-bar
-                v-for="(color, index2) in colors"
-                :key="index2"
+                v-for="(color, index) in colors"
+                :key="`vertical-${index}`"
                 orientation="vertical"
-                :progress="(index2 + 1) * 15"
+                :progress="(index + 1) * 15"
                 :class="[ color, size ]"
             />
             <hr class="hidden medium">

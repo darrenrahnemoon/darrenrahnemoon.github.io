@@ -14,7 +14,7 @@ export const routes = _({
 
     playground : {
         visible   : !Environment.isProduction,
-        path      : '/playground',
+        path      : '/playground/:page?',
         component : () => import(/* webpackChunkName: "playground" */ '../views/playground/Playground.vue'),
     },
 } as Record<string, Route>)

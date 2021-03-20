@@ -3,7 +3,7 @@
         <h1>Alert Boxes</h1>
 
         <h2>Non-dismissable</h2>
-        <alert-box v-for="(color, index) in colors" :key="index" :class="color">
+        <alert-box v-for="(color, index) in colors" :key="`non-dismissable-${index}`" :class="color">
             <template #title>
                 Alert Detected
             </template>
@@ -17,7 +17,7 @@
         <h2>Dismissable</h2>
         <alert-box
             v-for="(color, index) in colors"
-            :key="index"
+            :key="`dismissable-${index}`"
             :class="color"
             dismissable
         >

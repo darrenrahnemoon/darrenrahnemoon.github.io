@@ -4,9 +4,11 @@
             <h1>Components</h1>
             <input-button
                 v-for="(page, name) in pages"
-                :key="name"
+                :key="`page-${name}`"
+                variant="router-link"
                 class="block mb-md"
-                @click.native="active = page"
+                active-class="navigation-link-active"
+                :to="`/playground/${_.kebabCase(name)}`"
             >
                 {{ name }}
             </input-button>
@@ -21,10 +23,20 @@
 .playground {
     background : linear-gradient(to bottom right, $color-dark, $color-darker);
 }
+
+.navigation-link-active {
+    background-color : $color-primary !important;
+    color : $color-compliment-primary !important;
+
+    .content {
+        color : $color-compliment-primary !important;
+    }
+}
 </style>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import _                         from 'lodash';
+import { Component, Vue, Watch } from 'vue-property-decorator';
 
 import Layouts      from './Layouts.vue';
 import Typography   from './Typography.vue';
@@ -34,7 +46,13 @@ import AlertBoxes   from './AlertBoxes.vue';
 
 @Component
 export default class Playground extends Vue {
-    active = AlertBoxes;
+    active = null;
+
+    @Watch('$route', { immediate : true })
+    onRouteChange() {
+        const page = _.pascalCase((this as any).$route?.params?.page);
+        this.active = this.pages[page] || Layouts;
+    }
 
     get pages() {
         return {

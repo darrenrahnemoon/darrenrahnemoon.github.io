@@ -15,7 +15,7 @@
         <!-- Font Sizes -->
         <div
             v-for="size in sizes"
-            :key="size"
+            :key="`font-size-${size}`"
             :class="`font-${size}`"
             class="my-sm"
         >
@@ -27,7 +27,7 @@
         <!-- Font Colors -->
         <div
             v-for="color in colors"
-            :key="color"
+            :key="`font-color-${color}`"
             :class="`tc-${color}`"
             class="my-sm"
         >
@@ -37,11 +37,11 @@
         <hr>
 
         <!-- Highlight -->
-        <p v-for="color in colors" :key="color">
+        <p v-for="color in colors" :key="`highlight-${color}`">
             You can use a mark tag with class '{{ color }}' to <mark :class="color">highlight</mark> text.
         </p>
         <hr class="hidden small">
-        <p v-for="color in colors" :key="color">
+        <p v-for="color in colors" :key="`highlight-span-${color}`">
             You can use a span tag with class 'highlight' + '{{ color }}' to <span class="highlight" :class="color">highlight</span> text.
         </p>
 
@@ -105,42 +105,42 @@
         <row>
             <column>
                 <ul class="disc">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`disc-${index}`">
                         Item {{ index }}
                     </li>
                 </ul>
             </column>
             <column>
                 <ul class="circle">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`circle-${index}`">
                         Item {{ index }}
                     </li>
                 </ul>
             </column>
             <column>
                 <ul class="square">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`square-${index}`">
                         Item {{ index }}
                     </li>
                 </ul>
             </column>
             <column>
                 <ol class="decimal">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`decimal-${index}`">
                         Item {{ index }}
                     </li>
                 </ol>
             </column>
             <column>
                 <ol class="roman">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`roman-${index}`">
                         Item {{ index }}
                     </li>
                 </ol>
             </column>
             <column>
                 <ol class="alpha">
-                    <li v-for="index in 10" :key="index">
+                    <li v-for="index in 10" :key="`alpha-${index}`">
                         Item {{ index }}
                     </li>
                 </ol>
@@ -154,9 +154,5 @@ import { Component }      from 'vue-property-decorator';
 import { BasePlayground } from './BasePlayground';
 
 @Component
-export default class Typography extends mixins(BasePlayground) {
-    mounted() {
-        console.log(this);
-    }
-}
+export default class Typography extends mixins(BasePlayground) {}
 </script>

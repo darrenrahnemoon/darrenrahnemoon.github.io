@@ -5,6 +5,7 @@
         class="input button"
         :class="cssClasses"
         tabindex="1"
+        v-bind="$attrs"
     >
         <span v-if="$slots.before" class="content-before">
             <slot name="before" />
@@ -16,10 +17,27 @@
             <slot name="after" />
         </span>
     </button>
+    <router-link
+        v-else-if="variant === 'router-link'"
+        :to="to"
+        class="input button"
+        v-bind="$attrs"
+    >
+        <span v-if="$slots.before" class="content-before">
+            <slot name="before" />
+        </span>
+        <span v-if="$slots.default" class="content">
+            <slot />
+        </span>
+        <span v-if="$slots.after" class="content-after">
+            <slot name="after" />
+        </span>
+    </router-link>
     <a
-        v-else-if="variant === 'link'"
+        v-else
         :href="to"
         class="input button"
+        v-bind="$attrs"
     >
         <span v-if="$slots.before" class="content-before">
             <slot name="before" />
@@ -36,8 +54,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 enum InputButtonVariant {
-    Button = 'button',
-    Link   = 'link'
+    Button     = 'button',
+    Link       = 'link',
+    RouterLink = 'router-link',
 }
 
 @Component

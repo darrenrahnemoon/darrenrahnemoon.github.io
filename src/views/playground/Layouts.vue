@@ -5,7 +5,7 @@
         <row>
             <column
                 v-for="(color, index) in colors"
-                :key="index"
+                :key="`columns-${index}`"
                 :class="`bc-${color} tcc-${color} p-md`"
             >
                 <div class="h1">
@@ -37,7 +37,7 @@
 
         <h2>Row With Vertical Orientation</h2>
         <row orientation="vertical">
-            <column v-for="(color, index) in colors" :key="index" :class="`bc-${color} tcc-${color} p-md`">
+            <column v-for="(color, index) in colors" :key="`vertical-orientation-${index}`" :class="`bc-${color} tcc-${color} p-md`">
                 <div class="h1">
                     Column {{ index + 1 }}
                 </div>

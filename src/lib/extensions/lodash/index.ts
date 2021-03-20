@@ -4,6 +4,9 @@ _.mixin(_, {
     compactObject : function(obj: any) {
         return _.pickBy(obj, value => !_.isUndefined(value));
     },
+    pascalCase : function(string: string) {
+        return _.startCase(string).replaceAll(' ', '');
+    },
 }, { chain : true });
 
 _.mixin(_, {
