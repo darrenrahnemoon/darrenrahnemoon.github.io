@@ -9,6 +9,9 @@
         <div v-if="dismissable" class="dismiss" @click="hide">
             <icon name="times" />
         </div>
+        <div v-if="title" class="title">
+            {{ title }}
+        </div>
         <div v-if="$slots.title" class="title">
             <slot name="title" />
         </div>
@@ -26,6 +29,9 @@ export default class AlertBox extends Vue {
 
     @Prop({ type : Boolean })
     dismissable: boolean;
+
+    @Prop({ required : false })
+    title: string;
 
     @Watch('visible')
     onvisibleChange(value: boolean) {
@@ -58,33 +64,29 @@ export default class AlertBox extends Vue {
 .alert {
     transition : all ease 0.25s;
 
-    margin : $x-small 0;
+    margin : $medium / 4 0;
 
-    padding : $small $small + $x-small;
+    padding : $medium / 2 $medium / 1.5;
 
     background-color : transparent;
 
     color : $color-primary;
 
-    border-right : $x-small solid $color-primary;
-    border-left : $x-small solid $color-primary;
+    border-right : $thickness-secondary solid $color-primary;
+    border-left : $thickness-secondary solid $color-primary;
 
     font-size : $font-small;
-
-    max-height : 1000px;
-
-    overflow : hidden;
-    text-overflow : ellipsis;
 
     @extend .no-select;
 
     .title {
         display : block;
 
-        margin : 0;
+        margin : 0 0 $medium / 4 0;
 
-        font-size : $font-large;
-        font-weight : bold;
+        font-size : $font-medium;
+
+        @extend .bold;
 
         text-transform : uppercase;
     }

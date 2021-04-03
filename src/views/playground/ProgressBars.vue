@@ -4,11 +4,11 @@
         <!-- Horizontal -->
         <h2>Horizontal</h2>
 
-        <div v-for="(size, index1) in sizes" :key="index1">
+        <div v-for="(size, sizeIndex) in sizes" :key="`horizontal-size-${sizeIndex}`">
             <h3>{{ size | startCase }}</h3>
             <progress-bar
                 v-for="(color, index) in colors"
-                :key="`horizontal-${index}`"
+                :key="`horizontal-color-${index}`"
                 :progress="(index + 1) * 15"
                 :class="[ color, size ]"
             />
@@ -18,11 +18,11 @@
         <h2>Vertical</h2>
 
         <!-- Vertical -->
-        <div v-for="(size, index1) in sizes" :key="index1">
+        <div v-for="(size, sizeIndex) in sizes" :key="`vertical-size-${sizeIndex}`">
             <h3>{{ size | startCase }}</h3>
             <progress-bar
                 v-for="(color, index) in colors"
-                :key="`vertical-${index}`"
+                :key="`vertical-color-${index}`"
                 orientation="vertical"
                 :progress="(index + 1) * 15"
                 :class="[ color, size ]"

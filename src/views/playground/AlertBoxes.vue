@@ -18,12 +18,10 @@
         <alert-box
             v-for="(color, index) in colors"
             :key="`dismissable-${index}`"
+            title="Alert Detected"
             :class="color"
             dismissable
         >
-            <template #title>
-                Alert Detected
-            </template>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nulla, dolores eum fuga molestias at repellat alias, in qui mollitia natus officiis rerum magni pariatur minus temporibus illo veniam tempora.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nulla, dolores eum fuga molestias at repellat alias, in qui mollitia natus officiis rerum magni pariatur minus temporibus illo veniam tempora.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, nulla, dolores eum fuga molestias at repellat alias, in qui mollitia natus officiis rerum magni pariatur minus temporibus illo veniam tempora.

@@ -7,7 +7,7 @@
                 :key="`page-${name}`"
                 variant="router-link"
                 class="block mb-md"
-                active-class="navigation-link-active"
+                active-class="active"
                 :to="`/playground/${_.kebabCase(name)}`"
             >
                 {{ name }}
@@ -22,15 +22,6 @@
 <style lang="scss">
 .playground {
     background : linear-gradient(to bottom right, $color-dark, $color-darker);
-}
-
-.navigation-link-active {
-    background-color : $color-primary !important;
-    color : $color-compliment-primary !important;
-
-    .content {
-        color : $color-compliment-primary !important;
-    }
 }
 </style>
 

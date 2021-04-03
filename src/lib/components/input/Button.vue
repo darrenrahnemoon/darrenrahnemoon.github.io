@@ -168,7 +168,7 @@ export default class InputButton extends Vue {
         }
     }
 
-    &:active {
+    &:active, &.active {
         transform : scale(0.95, 0.95);
 
         .content, .content-before, .content-after {
@@ -192,7 +192,7 @@ export default class InputButton extends Vue {
                 }
             }
 
-            &:active {
+            &:active, &.active {
                 .content, .content-before, .content-after {
                     background-color : darken($value, 5%);
                     color : map-get($color-compliment, $key);
