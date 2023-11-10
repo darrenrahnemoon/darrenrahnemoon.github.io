@@ -1,0 +1,20 @@
+/* Customizations to the designer theme should be defined here */
+a {
+	color: $primaryColor;
+	text-decoration: none;
+	transition: all $transitionDuration;
+
+	&:hover {
+		color: $primaryLightColor;
+	}
+	&:active {
+		color:  $primaryLighterColor;
+	}
+}
+
+.full-screen {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
