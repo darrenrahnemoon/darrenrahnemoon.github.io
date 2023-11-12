@@ -1,0 +1,97 @@
+<script lang="ts" setup>
+import Card            from 'primevue/card';
+import { defineProps } from 'vue';
+import { Project }     from '../views/projects/types';
+
+defineProps<{
+	project: Project;
+}>();
+</script>
+
+<template>
+	<Card class="project">
+		<template #header>
+			<div
+				class="thumbnail"
+				:style="{ 'background-image' : `url(${project.thumbnail})` }"
+			>
+				<div class="overlay">
+					<div class="date">
+						{{ project.date.toLocaleString('default', { month : 'long', year : 'numeric' }) }}
+					</div>
+				</div>
+			</div>
+		</template>
+		<template #content>
+			<div class="grid flex-column-reverse md:flex-row">
+				<div class="col-12 md:col-9">
+					<div class="p-card-title">
+						{{ project.name }}
+					</div>
+					<div class="p-card-subtitle">
+						{{ project.summary }}
+					</div>
+				</div>
+				<div class="col-12 md:col-3 icon text-left md:text-right">
+					<div :class="project.icon" />
+				</div>
+			</div>
+		</template>
+	</Card>
+</template>
+
+<style lang="scss" scoped>
+.project {
+	border-top: 5px solid var(--primary-color);
+	border-bottom: 5px solid var(--primary-color);
+
+	.p-card-content {
+		.grid {
+			align-items: center;
+
+			.icon {
+				text-align: right;
+				padding-right: 1em;
+				margin-top: 0.2em;
+				& > * {
+					font-size: 3em;
+				}
+			}
+		}
+	}
+
+	.thumbnail {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		aspect-ratio: 1 / 1.1;
+
+		.overlay {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: rgba(0,0,0, 0.5);
+			transition: var(--primary-transition);
+			opacity: 0;
+
+			.date {
+				text-align: center;
+				font-size: 5vw;
+				pointer-events: none;
+				color: var(--primary-color);
+				opacity: 0.7;
+			}
+		}
+
+	}
+	&:hover {
+		.thumbnail .overlay {
+			opacity: 1;
+		}
+	}
+
+}
+</style>
+../views/projects/types

@@ -1,20 +1,27 @@
 <script setup lang="ts">
-import Menu from './components/Menu.vue';
+import { onMounted } from 'vue';
+import { gsap }      from 'gsap';
+import Menu          from './views/components/Menu.vue';
+
+onMounted(() => {
+	gsap.from('.view', { marginLeft : 0 }); // HACK: see Menu timeline
+});
+
 </script>
 
 <template>
-	<div class="grid">
+	<div class="app">
 		<Menu />
-		<div class="view col">
-			<router-view ></router-view>
+		<div class="view">
+			<router-view />
 		</div>
 	</div>
 </template>
 
-<style lang="scss" scoped>
-.view {
-	background-color: var(--shade-900);
-	height: 100vh;
-	overflow-y: scroll;
+<style lang="scss">
+.app {
+	.view {
+		margin-left: 80px;
+	}
 }
 </style>

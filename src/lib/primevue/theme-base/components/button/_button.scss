@@ -32,7 +32,7 @@
 
         &:not(:disabled):active {
             background: $buttonBg;
-            color: $buttonTextActiveColor;
+            color: $buttonTextActiveColor !important;
             border: $outlinedButtonBorder $buttonBg;
         }
 
