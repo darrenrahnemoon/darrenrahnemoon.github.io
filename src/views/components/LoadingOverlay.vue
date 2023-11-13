@@ -101,7 +101,7 @@ defineProps<{
 	justify-content: center;
 	opacity: 0;
 	pointer-events: none;
-	background-color: var(--shade-900);
+	background-color: var(--surface-900);
 	transition: var(--primary-transition);
 	z-index: 1000;
 

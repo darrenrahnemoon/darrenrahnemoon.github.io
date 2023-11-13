@@ -9,6 +9,7 @@ export const projects: Project[] = _.orderBy([
 		thumbnail : '/assets/projects/yekan/yekan.jpeg',
 		icon      : 'pi pi-mobile',
 		date      : new Date('2016-05-02'),
+		page      : () => import('./views/Yekan.vue'),
 	},
 	{
 		slug      : 'markeep',
@@ -29,7 +30,7 @@ export const projects: Project[] = _.orderBy([
 	{
 		slug      : 'tricopterzilla',
 		name      : 'Tripcopterzilla',
-		summary   : 'An 80cm long tricopter with dedicated rear propulsion',
+		summary   : 'A Giant Tricopter with Dedicated Rear Propulsion',
 		thumbnail : '/assets/projects/drone/drone.jpg',
 		icon      : 'pi pi-cog',
 		date      : new Date('2020-10-02'),

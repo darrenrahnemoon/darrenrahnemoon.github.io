@@ -4,7 +4,7 @@ import Image         from 'primevue/image';
 import { gsap }      from 'gsap';
 import { onMounted } from 'vue';
 
-const count = 95;
+const count = 94;
 
 onMounted(() => {
 	gsap.timeline()
@@ -45,7 +45,7 @@ onMounted(() => {
 <style lang="scss">
 .gallery-intro {
 	padding : 2em;
-	background-color: var(--shade-800);
+	background-color: var(--surface-800);
 	h1 {
 		margin: 0 0 0.2em 0;
 	}
