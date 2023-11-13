@@ -1,5 +1,4 @@
-import _           from 'lodash';
-import { Project } from './types';
+import _ from 'lodash';
 
 export const projects: Project[] = _.orderBy([
 	{
@@ -74,8 +73,8 @@ export interface Project {
 	name: string;
 	summary: string;
 	date: Date;
-	thumbnail: string;
-	icon: string;
+	thumbnail?: string;
+	icon?: string;
 	component?: () => any;
 }
 
