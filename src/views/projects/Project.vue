@@ -2,13 +2,19 @@
 import { defineAsyncComponent, onMounted, shallowRef } from 'vue';
 import { useRoute }                                    from 'vue-router';
 import { projects }                                    from './projects';
+import NotFound                                        from '../404.vue';
 
 const route = useRoute();
 const project = shallowRef(null);
 
 onMounted(() => {
-	const page = defineAsyncComponent(projects.find(project => project.slug === route.params.slug)?.page);
-	project.value = page;
+	const page = projects.find(project => project.slug === route.params.slug)?.page;
+	if (page) {
+		project.value = defineAsyncComponent(page);
+	}
+	else {
+		project.value = NotFound;
+	}
 });
 </script>
 
