@@ -5,6 +5,9 @@ import { routes }                         from './routes';
 export const VueRouterIntegrationPlugin: Plugin = {
 	install(app) {
 		const router = createRouter({
+			scrollBehavior() {
+				return { top : 0 };
+			},
 			history : createWebHistory(),
 			routes,
 		});

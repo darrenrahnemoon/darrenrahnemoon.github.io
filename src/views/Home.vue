@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted }        from 'vue';
-import { gsap }                  from 'gsap';
-import Button                    from 'primevue/button';
-import Projects                  from './components/Projects.vue';
-import { projects as _projects } from './projects';
+import { ref, onMounted } from 'vue';
+import { gsap }           from 'gsap';
+import Button             from 'primevue/button';
+import Projects           from './components/Projects.vue';
+import { projects }       from './projects/projects';
 
 const contactMethods = ref([
 	{ icon : 'facebook',	path : 'https://www.facebook.com/darrenrahnemoon/' },
@@ -13,28 +13,28 @@ const contactMethods = ref([
 	{ icon : 'envelope',	path : 'mailto:darrenrahnemoon@gmail.com' },
 ]);
 
-const projects = ref(_projects.slice(0, 3));
-
 onMounted(function() {
 	const scrollTrigger = {
-		start : '-=25%',
-		end   : '+=10',
+		start : 'top +=40%',
+		end   : '+=20% +=20%',
 		scrub : 1,
 	};
-	gsap.timeline()
-		.from('.avatar', { y : -100, opacity : 0, duration : 0.2 })
-		.from('.name', { y : 100, opacity : 0, duration : 0.2 })
-		.from('.slogan', { y : 100, opacity : 0, duration : 0.2 })
-		.from('.go-to-intro', { y : 100, opacity : 0, duration : 0.2 });
 
+	gsap.timeline()
+		.from('.splash-screen .avatar', { y : -100, opacity : 0 }, 0)
+		.from('.splash-screen .name', { x : -100, opacity : 0 }, 1)
+		.from('.splash-screen .slogan', { x : 100, opacity : 0 }, 1)
+		.from('.splash-screen .go-to-intro', { y : 100, opacity : 0 });
 
 	gsap.timeline({ scrollTrigger : { trigger : '.intro', ...scrollTrigger } })
-		.from('.intro-text', { opacity : 0, x : 100 })
-		.fromTo('.contact-method', { opacity : 0, x : 10 }, { opacity : 1, x : 0, stagger : 0.1 });
+		.from('.intro .intro-text', { opacity : 0, x : 100 })
+		.fromTo('.intro .contact-method', { opacity : 0, x : 10 }, { opacity : 1, x : 0, stagger : 0.4 });
 
 	gsap.timeline({ scrollTrigger : { trigger : '.projects', ...scrollTrigger } })
-		.from('.projects > h1', { opacity : 0, x : 100 })
-		.from('.project', { y : 100, opacity : 0, stagger : 0.1 });
+		.from('.projects > h1', { opacity : 0, x : 100 }, 1)
+		.from('.project', { y : 100, opacity : 0, stagger : 1, duration : 3 }, 2)
+		.from('.project .p-card-title, .project .p-card-subtitle', { x : -100, opacity : 0, stagger : 1, duration : 2 }, 3)
+		.from('.project .icon', { x : 10, opacity : 0, stagger : 1, duration : 2 }, 3);
 });
 </script>
 
@@ -91,11 +91,19 @@ onMounted(function() {
 	</div>
 	<Projects
 		title="My Latest Projects"
-		:projects="projects"
-	/>
-	<div class="footer">
-		Copyright &copy; 2015-{{ new Date().getFullYear() }} Darren R. All rights Reserved.
-	</div>
+		:projects="projects.slice(0, 3)"
+	>
+		<template #after>
+			<router-link to="/projects">
+				<Button
+					label="View All Projects"
+					outlined
+					size="small"
+					class="mb-6"
+				/>
+			</router-link>
+		</template>
+	</Projects>
 </template>
 
 <style lang="scss" scoped>
@@ -133,10 +141,5 @@ onMounted(function() {
 		}
 	}
 }
-
-.footer {
-	padding: 2em 1em;
-	text-align: center;
-	background-color: var(--shade-800);
-}
 </style>
+./projects/projects

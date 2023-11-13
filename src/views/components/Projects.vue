@@ -13,12 +13,13 @@ defineProps<{
 	<div class="projects parallax full-screen">
 		<h1>{{ title }}</h1>
 		<div class="grid">
-			<div v-for="project in projects" :key="project.name" class="col-4">
+			<div v-for="project in projects" :key="project.name" class="col-12 md:col-6 lg:col-4">
 				<router-link :to="`/project/${project.slug}`">
 					<ProjectCard :project="project" />
 				</router-link>
 			</div>
 		</div>
+		<slot name="after" />
 	</div>
 </template>
 
@@ -37,7 +38,7 @@ defineProps<{
 		padding: 0 1em 2em 1em;
 
 		& > div {
-			padding: 0 1em 0 1em;
+			padding: 1em;
 		}
 	}
 }

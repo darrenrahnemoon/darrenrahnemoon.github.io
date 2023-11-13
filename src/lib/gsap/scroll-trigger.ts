@@ -19,7 +19,6 @@ export const ScrollTriggerDirective: Directive = {
 					end      : 'center center',
 					duration : 1,
 					ease     : 'power2',
-					markers  : true,
 					...binding.value?.to,
 				},
 			});

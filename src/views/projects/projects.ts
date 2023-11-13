@@ -4,4 +4,7 @@ export const projects = [
 	yekan,
 	yekan,
 	yekan,
+	yekan,
+	yekan,
+	yekan,
 ];

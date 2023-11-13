@@ -2,6 +2,7 @@
 import { onMounted } from 'vue';
 import { gsap }      from 'gsap';
 import Menu          from './views/components/Menu.vue';
+import Footer        from './views/components/Footer.vue';
 
 onMounted(() => {
 	gsap.from('.view', { marginLeft : 0 }); // HACK: see Menu timeline
@@ -14,6 +15,7 @@ onMounted(() => {
 		<Menu />
 		<div class="view">
 			<router-view />
+			<Footer />
 		</div>
 	</div>
 </template>
