@@ -5,5 +5,5 @@ export interface Project {
 	date: Date;
 	thumbnail: string;
 	icon: string;
-	page: () => any;
+	page?: () => any;
 }
