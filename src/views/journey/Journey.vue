@@ -14,10 +14,10 @@ onMounted(() => {
 		const event = events.item(i);
 		gsap.timeline({
 			scrollTrigger : {
-				trigger : event,
-				scrub   : 3,
-				start   : '+=150% bottom',
-				end     : '+=10%',
+				trigger       : event,
+				start         : '+=150% bottom',
+				end           : '+=10%',
+				toggleActions : 'play none none reverse',
 			},
 		})
 			.from(

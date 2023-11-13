@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { gsap }           from 'gsap';
+import { gsap, Power0 }   from 'gsap';
 import Button             from 'primevue/button';
 import Projects           from './components/Projects.vue';
 import { projects }       from './projects/projects';
@@ -17,10 +17,10 @@ onMounted(function() {
 	const scrollTrigger = {
 		start : 'top +=40%',
 		end   : '+=20% +=20%',
-		scrub : 1,
+		scrub : 3,
 	};
 
-	gsap.timeline()
+	gsap.timeline({ ease : Power0.easeInOut })
 		.from('.splash-screen .avatar', { y : -100, opacity : 0 }, 0)
 		.from('.splash-screen .name', { x : -100, opacity : 0 }, 1)
 		.from('.splash-screen .slogan', { x : 100, opacity : 0 }, 1)
@@ -67,10 +67,10 @@ onMounted(function() {
 				My name is Darren. I'm a software developer and I'm studying electrical engineering.
 			</p>
 			<p>
-				When I'm not coding, designing a PCB or doing some CAD work, I spend my time with photography, painting, and reading random physics or ML papers.
+				When I'm not coding or doing some CAD work, I spend my time with photography, painting, and reading random physics or ML papers.
 			</p>
 			<p>
-				I figured I should throw up some of my work and my life experiences on this website and share it with the world so here it goes! XD
+				I figured I should throw up some of my work and my life experiences on this website and share it with the world so here it goes!
 			</p>
 			<br>
 			<p>
