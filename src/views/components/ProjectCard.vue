@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import Card            from 'primevue/card';
 import { defineProps } from 'vue';
-import { Project }     from '../views/projects/types';
+import { Project }     from '$/views/projects/projects';
 
 defineProps<{
 	project: Project;
@@ -65,6 +65,7 @@ defineProps<{
 		background-size: cover;
 		background-position: center;
 		aspect-ratio: 1 / 1.1;
+		background-color: var(--surface-700);
 
 		.overlay {
 			width: 100%;
@@ -94,4 +95,3 @@ defineProps<{
 
 }
 </style>
-../views/projects/types

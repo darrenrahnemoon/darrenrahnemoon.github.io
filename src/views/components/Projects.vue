@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 import ProjectCard     from './ProjectCard.vue';
-import { Project }     from '../projects/types';
+import { Project }     from '$/views/projects/projects';
 
 defineProps<{
-	title: string;
+	title?: string;
 	projects: Project[];
 }>();
 </script>
 
 <template>
 	<div class="projects parallax full-screen">
-		<h1>{{ title }}</h1>
+		<h1>{{ title || 'Projects' }}</h1>
 		<div class="grid">
 			<div v-for="project in projects" :key="project.name" class="col-12 md:col-6 lg:col-4">
 				<router-link :to="`/project/${project.slug}`">

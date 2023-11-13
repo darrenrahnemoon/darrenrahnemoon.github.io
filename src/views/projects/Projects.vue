@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import _             from 'lodash';
 import { projects }  from './projects';
-import Projects      from '../components/Projects.vue';
+import Projects      from '$/views/components/Projects.vue';
 import { gsap }      from 'gsap';
 import { onMounted } from 'vue';
 

@@ -8,17 +8,8 @@ const count = 94;
 
 onMounted(() => {
 	gsap.timeline()
-		.from('.gallery-intro h1', { x : -10, opacity : 0 }, 1)
-		.from('.gallery-intro div', { x : 10, opacity : 0 }, 1);
-
-	gsap.timeline({
-		scrollTrigger : {
-			trigger : '.gallery',
-			scrub   : true,
-			start   : 'top +=90%',
-			end     : 'bottom',
-		},
-	})
+		.from('.gallery-intro h1', { x : -10, opacity : 0 })
+		.from('.gallery-intro div', { x : 10, opacity : 0 })
 		.from('.p-image', { x : -100, opacity : 0, stagger : 0.1 });
 });
 

@@ -9,7 +9,7 @@ export const projects: Project[] = _.orderBy([
 		thumbnail : '/assets/projects/yekan/yekan.jpeg',
 		icon      : 'pi pi-mobile',
 		date      : new Date('2016-05-02'),
-		page      : () => import('./views/Yekan.vue'),
+		component : () => import('./views/Yekan.vue'),
 	},
 	{
 		slug      : 'markeep',
@@ -28,8 +28,8 @@ export const projects: Project[] = _.orderBy([
 		date      : new Date('2015-04-02'),
 	},
 	{
-		slug      : 'tricopterzilla',
-		name      : 'Tripcopterzilla',
+		slug      : 'tricopter',
+		name      : 'Tricopter',
 		summary   : 'A Giant Tricopter with Dedicated Rear Propulsion',
 		thumbnail : '/assets/projects/drone/drone.jpg',
 		icon      : 'pi pi-cog',
@@ -46,7 +46,7 @@ export const projects: Project[] = _.orderBy([
 	{
 		slug      : 'thorns',
 		name      : 'Thorns',
-		summary   : 'Multipurpose Landing Page Template',
+		summary   : 'Multipurpose Landing component Template',
 		thumbnail : '/assets/projects/thorns/thorns.jpg',
 		icon      : 'pi pi-sitemap',
 		date      : new Date('2018-05-02'),
@@ -59,4 +59,23 @@ export const projects: Project[] = _.orderBy([
 		icon      : 'pi pi-calendar-plus',
 		date      : new Date('2020-01-02'),
 	},
+	{
+		slug      : 'magic-crystal',
+		name      : 'MC Trading Framework',
+		summary   : 'One-Stop Shop for Backtesting and Warehousing Historical Data',
+		icon      : 'pi pi-money-bill',
+		date      : new Date('2022-11'),
+		component : () => import('./views/TradingFramework.vue'),
+	},
 ], 'date', 'desc');
+
+export interface Project {
+	slug: string;
+	name: string;
+	summary: string;
+	date: Date;
+	thumbnail: string;
+	icon: string;
+	component?: () => any;
+}
+

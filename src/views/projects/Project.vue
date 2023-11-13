@@ -8,9 +8,9 @@ const route = useRoute();
 const project = shallowRef(null);
 
 onMounted(() => {
-	const page = projects.find(project => project.slug === route.params.slug)?.page;
-	if (page) {
-		project.value = defineAsyncComponent(page);
+	const component = projects.find(project => project.slug === route.params.slug)?.component;
+	if (component) {
+		project.value = defineAsyncComponent(component);
 	}
 	else {
 		project.value = NotFound;

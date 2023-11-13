@@ -71,7 +71,7 @@ onMounted(() => {
 	}
 }
 .journey {
-	background-image: url('../../public/assets/views/journey/journey.jpeg');
+	background-image: url('/assets/views/journey/journey.jpeg');
 	position: relative;
 
 	.p-timeline {

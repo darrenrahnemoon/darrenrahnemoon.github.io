@@ -7,4 +7,5 @@ export const routes: RouteRecordRaw[] = [
 	{ path : '/project/:slug', 	component : () => import('$/views/projects/Project.vue') },
 	{ path : '/gallery',		component : () => import('$/views/Gallery.vue') },
 	{ path : '/rants',			component : () => import('$/views/Rants.vue') },
+	{ path : '/:match(.*)*', 	component : () => import('$/views/404.vue') },
 ];
