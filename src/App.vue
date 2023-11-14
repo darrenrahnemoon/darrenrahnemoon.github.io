@@ -20,17 +20,9 @@ onMounted(() => {
 	<LoadingOverlay :visible="isLoading" />
 	<div class="app">
 		<Menu />
-		<div class="view">
+		<div class="sm:ml-8">
 			<router-view />
 			<Footer />
 		</div>
 	</div>
 </template>
-
-<style lang="scss">
-.app {
-	.view {
-		margin-left: 80px;
-	}
-}
-</style>

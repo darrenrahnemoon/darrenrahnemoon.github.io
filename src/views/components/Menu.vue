@@ -1,8 +1,40 @@
 <script setup lang="ts">
 import { gsap, Power0 }   from 'gsap';
 import { onMounted, ref } from 'vue';
+import SpeedDial          from 'primevue/speeddial';
+import { MenuItem }       from 'primevue/menuitem';
+import { useRouter }      from 'vue-router';
 
+const router = useRouter();
 const logo = ref(null);
+
+const speedDialItems: MenuItem[] = [
+	{
+		label   : 'Home',
+		icon    : 'pi pi-home',
+		command : () => router.push('/'),
+	},
+	{
+		label   : 'Journey',
+		icon    : 'pi pi-forward',
+		command : () => router.push('/journey'),
+	},
+	{
+		label   : 'Projects',
+		icon    : 'pi pi-wrench',
+		command : () => router.push('/projects'),
+	},
+	{
+		label   : 'Gallery',
+		icon    : 'pi pi-images',
+		command : () => router.push('/gallery'),
+	},
+	{
+		label   : 'Rants',
+		icon    : 'pi pi-comments',
+		command : () => router.push('/rants'),
+	},
+];
 
 onMounted(() => {
 	for (const path of logo.value.children) {
@@ -20,7 +52,17 @@ onMounted(() => {
 </script>
 
 <template>
-	<div class="menu">
+	<div class="menu-mobile block sm:hidden">
+		<SpeedDial
+			mask
+			:model="speedDialItems"
+			class="right-0 bottom-0"
+			direction="up"
+			button-class="p-button-sm"
+			:tooltip-options="{ position : 'left', color : 'var(--color-primary)' }"
+		/>
+	</div>
+	<div class="menu hidden sm:flex">
 		<div class="menu-line" />
 		<div class="menu-items">
 			<router-link class="menu-item left" to="/journey">
@@ -72,7 +114,14 @@ onMounted(() => {
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.menu-mobile {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	z-index: 999;
+	opacity: 0.7;
+}
 .menu {
 	background-color: var(--surface-900);
 	position: fixed;
@@ -85,7 +134,7 @@ onMounted(() => {
 	transform-origin: top left;
 	transform: rotate(-90deg) translateX(-100%);
 	overflow: hidden;
-	height: 80px; // HACK
+	height: 5rem; // HACK
 	white-space: nowrap;
 
 	.menu-line {
@@ -121,7 +170,7 @@ onMounted(() => {
 
 		.menu-signature {
 			svg {
-				height: 80px; // HACK
+				height: 5rem; // HACK
 				vertical-align: middle;
 				transition: all ease .15s;
 			}
