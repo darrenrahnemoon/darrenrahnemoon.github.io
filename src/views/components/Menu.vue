@@ -59,7 +59,7 @@ onMounted(() => {
 			class="right-0 bottom-0"
 			direction="up"
 			button-class="p-button-sm"
-			:tooltip-options="{ position : 'left', color : 'var(--color-primary)' }"
+			:tooltip-options="{ position : 'left', event : 'hover' }"
 		/>
 	</div>
 	<div class="menu hidden sm:flex">
