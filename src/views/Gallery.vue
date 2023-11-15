@@ -60,7 +60,7 @@ onMounted(() => {
 
 			@media screen and (min-width : $md) {
 				width : auto;
-				height: 20rem;
+				height: 10rem;
 			}
 		}
 	}

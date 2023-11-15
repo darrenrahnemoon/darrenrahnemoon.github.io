@@ -40,26 +40,34 @@ defineProps<{
 	</Card>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .project {
 	border-top: 5px solid var(--primary-color);
 	border-bottom: 5px solid var(--primary-color);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	.p-card-body {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-	.p-card-content {
-		.grid {
-			align-items: center;
+		.p-card-content {
+			.grid {
+				align-items: center;
 
-			.icon {
-				text-align: right;
-				padding-right: 1em;
-				margin-top: 0.2em;
-				& > * {
-					font-size: 3em;
+				.icon {
+					text-align: right;
+					padding-right: 1em;
+					margin-top: 0.2em;
+					& > * {
+						font-size: 3em;
+					}
 				}
 			}
 		}
 	}
-
 	.thumbnail {
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -92,6 +100,5 @@ defineProps<{
 			opacity: 1;
 		}
 	}
-
 }
 </style>
