@@ -70,7 +70,7 @@ const screenshots = [
 			<img src="/public/assets/projects/yekan/receiving-award.jpg" class="w-full h-full">
 		</div>
 		<div class="award col-12 md:col-8 flex justify-content-center align-items-center">
-			<div class="col-12 md:col-6">
+			<div class="col-12 md:col-6 p-3">
 				Yekan won the Gold Medal and the Special Inventor Award at iCan 2018 International Invention Innovation Competition and became a permanent subsidiary of Marlik Institute of Innovation and Technology.
 			</div>
 		</div>

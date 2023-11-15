@@ -60,21 +60,41 @@ export const projects: Project[] = _.orderBy([
 	},
 	{
 		slug      : 'magic-crystal',
-		name      : 'MC Trading Framework',
+		name      : 'Magic Crystal Trading Framework',
 		summary   : 'One-Stop Shop for Backtesting and Warehousing Historical Data',
-		icon      : 'pi pi-money-bill',
+		thumbnail : '/assets/projects/magic-crystal/magic-crystal.jpeg',
+		icon      : 'pi pi-chart-line',
 		date      : new Date('2022-11'),
 		component : () => import('./views/TradingFramework.vue'),
+	},
+	{
+		slug      : 'vue-3-class-api',
+		name      : 'Vue 3 Class API',
+		summary   : 'Alternative to Vue 3 Composition API',
+		thumbnail : '/assets/projects/vue-3-class-api/vue-3-class-api.jpeg',
+		icon      : 'pi pi-qrcode',
+		date      : new Date('2022-03-12'),
+		url       : 'https://github.com/darrenrahnemoon/vue-class-api',
+	},
+	{
+		slug      : 'commander-js-decorated',
+		name      : 'CommanderJS Decorated',
+		summary   : 'Decorator Syntax for the CommanderJS Library',
+		thumbnail : '/assets/projects/commander-js-decorated/commander-js-decorated.png',
+		icon      : 'pi pi-code',
+		date      : new Date('2022-02-21'),
+		url       : 'https://github.com/darrenrahnemoon/commander.js-decorated',
 	},
 ], 'date', 'desc');
 
 export interface Project {
-	slug: string;
+	slug?: string;
 	name: string;
 	summary: string;
 	date: Date;
 	thumbnail?: string;
 	icon?: string;
 	component?: () => any;
+	url?: string;
 }
 

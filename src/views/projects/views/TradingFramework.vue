@@ -23,11 +23,11 @@ const features = [
 
 <template>
 	<div class="p-5 text-900 bg-primary text-center">
-		<h1>MC Trading Framework</h1>
+		<h1>Magic Crystal Trading Framework</h1>
 	</div>
 	<div class="surface-700 grid">
 		<div class="col-12 p-5">
-			<p>Magic Crystal (MC for short...Finance Bro Reference) is a trading framework written in python with a focus on modularity and customizability. MC consists of {{ features.length }} main features:</p>
+			<p>Magic Crystal (Finance bro reference) is a trading framework written in python with a focus on modularity and customizability. MC consists of {{ features.length }} main features:</p>
 		</div>
 		<div v-for="feature in features" :key="feature.title" class="col-12 md:col-4 p-4">
 			<Card class="h-full">

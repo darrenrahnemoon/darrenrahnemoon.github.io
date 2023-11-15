@@ -14,9 +14,12 @@ defineProps<{
 		<h1>{{ title || 'Projects' }}</h1>
 		<div class="grid">
 			<div v-for="project in projects" :key="project.name" class="col-12 md:col-6 lg:col-4">
-				<router-link :to="`/project/${project.slug}`">
+				<router-link v-if="project.component" :to="`/project/${project.slug}`">
 					<ProjectCard :project="project" />
 				</router-link>
+				<a v-else :href="project.url" target="_blank">
+					<ProjectCard :project="project" />
+				</a>
 			</div>
 		</div>
 		<slot name="after" />
