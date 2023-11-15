@@ -63,6 +63,7 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+@use 'primeflex/core/variables' as *;
 .journey-intro {
 	padding : 2em;
 	background-color: var(--surface-800);
@@ -91,6 +92,19 @@ onMounted(() => {
 				font-size: 2em;
 				font-weight: 800;
 				opacity:  0.5;
+			}
+
+			@media screen and (max-width : $md) {
+				flex-direction: column;
+				.p-timeline-event-marker {
+					margin : 0.5em 0 0.5em 0;
+					width: 1rem;
+					height: 1rem;
+				}
+				.description, .date {
+					font-size: 1.2rem;
+					text-align: center;
+				}
 			}
 		}
 	}

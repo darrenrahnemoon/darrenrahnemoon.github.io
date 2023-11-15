@@ -34,6 +34,8 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+@use 'primeflex/core/variables' as *;
+
 .gallery-intro {
 	padding : 2em;
 	background-color: var(--surface-800);
@@ -51,9 +53,15 @@ onMounted(() => {
 		flex-grow: 1;
 		margin: 0.3em;
 		img {
-			height: 20rem;
 			flex-grow: 1;
 			object-fit: cover;
+			width : 100%;
+			height: auto;
+
+			@media screen and (min-width : $md) {
+				width : auto;
+				height: 20rem;
+			}
 		}
 	}
 }
