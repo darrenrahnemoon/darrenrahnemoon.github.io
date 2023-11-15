@@ -53,10 +53,11 @@ export const projects: Project[] = _.orderBy([
 	{
 		slug      : 'barbers-club',
 		name      : "Barber's Club",
-		summary   : 'Barbershop Management Platform',
-		thumbnail : '/assets/projects/barbers/barbers.png',
+		summary   : 'Barbershop Management Platform Concept',
+		thumbnail : '/assets/projects/barbers-club/barbers-club.png',
 		icon      : 'pi pi-calendar-plus',
 		date      : new Date('2020-01-02'),
+		url       : '/assets/projects/barbers-club/barbers-club.pdf',
 	},
 	{
 		slug      : 'magic-crystal',
