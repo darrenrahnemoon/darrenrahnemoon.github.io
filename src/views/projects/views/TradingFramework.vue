@@ -27,7 +27,7 @@ const features = [
 	</div>
 	<div class="surface-700 grid">
 		<div class="col-12 p-5">
-			<p>Magic Crystal (Finance bro reference) is a trading framework written in python with a focus on modularity and customizability. MC consists of {{ features.length }} main features:</p>
+			<p>Magic Crystal is a trading framework written in python with a focus on modularity and customizability. MC consists of {{ features.length }} main features:</p>
 		</div>
 		<div v-for="feature in features" :key="feature.title" class="col-12 md:col-4 p-4">
 			<Card class="h-full">

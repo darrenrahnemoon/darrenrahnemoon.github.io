@@ -2,28 +2,28 @@
 import Galleria from 'primevue/galleria';
 
 const screenshots = [
-	'/assets/projects/yekan/pages/main.jpg',
-	'/assets/projects/yekan/pages/grades.jpg',
-	'/assets/projects/yekan/pages/login.jpg',
-	'/assets/projects/yekan/pages/academic-standing.jpg',
-	'/assets/projects/yekan/pages/profile.jpg',
-	'/assets/projects/yekan/pages/councilor-notes.jpg',
-	'/assets/projects/yekan/pages/beheavior-notes.jpg',
-	'/assets/projects/yekan/pages/instructors-portal.jpg',
-	'/assets/projects/yekan/pages/news.jpg',
-	'/assets/projects/yekan/pages/news-item.jpg',
-	'/assets/projects/yekan/pages/resources.jpg',
-	'/assets/projects/yekan/pages/resources-item.jpg',
-	'/assets/projects/yekan/pages/gallery.jpg',
-	'/assets/projects/yekan/pages/contact.jpg',
-	'/assets/projects/yekan/pages/instructors-portal-edit.jpg',
+	'/assets/views/projects/yekan/pages/main.jpg',
+	'/assets/views/projects/yekan/pages/grades.jpg',
+	'/assets/views/projects/yekan/pages/login.jpg',
+	'/assets/views/projects/yekan/pages/academic-standing.jpg',
+	'/assets/views/projects/yekan/pages/profile.jpg',
+	'/assets/views/projects/yekan/pages/councilor-notes.jpg',
+	'/assets/views/projects/yekan/pages/beheavior-notes.jpg',
+	'/assets/views/projects/yekan/pages/instructors-portal.jpg',
+	'/assets/views/projects/yekan/pages/news.jpg',
+	'/assets/views/projects/yekan/pages/news-item.jpg',
+	'/assets/views/projects/yekan/pages/resources.jpg',
+	'/assets/views/projects/yekan/pages/resources-item.jpg',
+	'/assets/views/projects/yekan/pages/gallery.jpg',
+	'/assets/views/projects/yekan/pages/contact.jpg',
+	'/assets/views/projects/yekan/pages/instructors-portal-edit.jpg',
 ];
 </script>
 
 <template>
 	<div class="grid yekan">
 		<div class="col-12 md:col-4 p-0">
-			<img src="/public/assets/projects/yekan/yekan.jpeg" alt="" class="w-full h-full">
+			<img src="/public/assets/views/projects/yekan/yekan.jpeg" alt="" class="w-full h-full">
 		</div>
 		<div class="col-12 md:col-8 intro flex justify-content-center align-items-center flex-column">
 			<h1>Yekan</h1>
@@ -67,7 +67,7 @@ const screenshots = [
 			</div>
 		</div>
 		<div class="col-12 md:col-4 p-0">
-			<img src="/public/assets/projects/yekan/receiving-award.jpg" class="w-full h-full">
+			<img src="/public/assets/views/projects/yekan/receiving-award.jpg" class="w-full h-full">
 		</div>
 		<div class="award col-12 md:col-8 flex justify-content-center align-items-center">
 			<div class="col-12 md:col-6 p-3">
@@ -104,7 +104,7 @@ const screenshots = [
 	.award {
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-image: url('/assets/projects/yekan/award.jpg');
+		background-image: url('/assets/views/projects/yekan/award.jpg');
 		font-size: 1.4em;
 		line-height: 1.5em;
 	}
