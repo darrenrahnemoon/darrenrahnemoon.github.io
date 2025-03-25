@@ -10,9 +10,9 @@ export const ScrollToDirective: Directive = {
 			event.preventDefault();
 
 			gsap.to(window, {
-				duration : 1,
-				scrollTo : binding.value,
-				ease     : 'power2',
+				duration: 1,
+				scrollTo: binding.value,
+				ease    : 'power2',
 			});
 		});
 	},

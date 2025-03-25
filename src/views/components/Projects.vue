@@ -4,7 +4,7 @@ import ProjectCard     from './ProjectCard.vue';
 import { Project }     from '$/views/projects/projects';
 
 defineProps<{
-	title?: string;
+	title?  : string;
 	projects: Project[];
 }>();
 </script>
@@ -12,8 +12,8 @@ defineProps<{
 <template>
 	<div class="projects parallax full-screen">
 		<h1>{{ title || 'Projects' }}</h1>
-		<div class="grid">
-			<div v-for="project in projects" :key="project.name" class="col-12 md:col-6 lg:col-4">
+		<div class="grid grid-cols-12 gap-4">
+			<div v-for="project in projects" :key="project.name" class="col-span-12 md:col-span-6 lg:col-span-4">
 				<router-link v-if="project.component" :to="`/project/${project.slug}`">
 					<ProjectCard :project="project" />
 				</router-link>

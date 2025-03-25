@@ -23,8 +23,8 @@ defineProps<{
 			</div>
 		</template>
 		<template #content>
-			<div class="grid flex-column-reverse md:flex-row">
-				<div class="col-12 md:col-9">
+			<div class="grid grid-cols-12 gap-4 flex-col-reverse md:flex-row">
+				<div class="col-span-12 md:col-span-9">
 					<div class="p-card-title">
 						{{ project.name }}
 					</div>
@@ -32,7 +32,7 @@ defineProps<{
 						{{ project.summary }}
 					</div>
 				</div>
-				<div class="col-12 md:col-3 icon text-left md:text-right">
+				<div class="col-span-12 md:col-span-3 icon text-left md:text-right">
 					<div :class="project.icon" />
 				</div>
 			</div>
@@ -42,8 +42,8 @@ defineProps<{
 
 <style lang="scss">
 .project {
-	border-top: 5px solid var(--primary-color);
-	border-bottom: 5px solid var(--primary-color);
+	border-top: 5px solid var(--p-primary-color);
+	border-bottom: 5px solid var(--p-primary-color);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -73,7 +73,7 @@ defineProps<{
 		background-size: cover;
 		background-position: center;
 		aspect-ratio: 1 / 1.1;
-		background-color: var(--surface-700);
+		background-color: var(--p-surface-700);
 
 		.overlay {
 			width: 100%;
@@ -82,14 +82,14 @@ defineProps<{
 			justify-content: center;
 			align-items: center;
 			background-color: rgba(0,0,0, 0.5);
-			transition: var(--primary-transition);
+			transition: all ease 0.5s;
 			opacity: 0;
 
 			.date {
 				text-align: center;
 				font-size: 5vw;
 				pointer-events: none;
-				color: var(--primary-color);
+				color: var(--p-primary-color);
 				opacity: 0.7;
 			}
 		}

@@ -10,7 +10,7 @@ onMounted(() => {
 	setTimeout(() => {
 		isLoading.value = false;
 	}, 200);
-	gsap.from('.view', { marginLeft : 0 }); // HACK: see Menu timeline
+	gsap.from('.view', { marginLeft: 0 }); // HACK: see Menu timeline
 });
 
 
@@ -20,7 +20,7 @@ onMounted(() => {
 	<LoadingOverlay :visible="isLoading" />
 	<div class="app">
 		<Menu />
-		<div class="sm:ml-8">
+		<div class="sm:ml-20">
 			<router-view />
 			<Footer />
 		</div>

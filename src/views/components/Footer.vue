@@ -8,6 +8,6 @@
 .footer {
 	padding: 2em 1em;
 	text-align: center;
-	background-color: var(--surface-900);
+	background-color: var(--p-surface-800);
 }
 </style>

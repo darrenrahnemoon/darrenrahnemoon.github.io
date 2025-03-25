@@ -1,60 +1,6 @@
-<script setup lang="ts">
-import { gsap, Power0 }   from 'gsap';
-import { onMounted, ref } from 'vue';
-import SpeedDial          from 'primevue/speeddial';
-import { MenuItem }       from 'primevue/menuitem';
-import { useRouter }      from 'vue-router';
-
-const router = useRouter();
-const logo = ref(null);
-
-const speedDialItems: MenuItem[] = [
-	{
-		label   : 'Home',
-		icon    : 'pi pi-home',
-		command : () => router.push('/'),
-	},
-	{
-		label   : 'Journey',
-		icon    : 'pi pi-forward',
-		command : () => router.push('/journey'),
-	},
-	{
-		label   : 'Projects',
-		icon    : 'pi pi-wrench',
-		command : () => router.push('/projects'),
-	},
-	{
-		label   : 'Gallery',
-		icon    : 'pi pi-images',
-		command : () => router.push('/gallery'),
-	},
-	{
-		label   : 'Rants',
-		icon    : 'pi pi-comments',
-		command : () => router.push('/rants'),
-	},
-];
-
-onMounted(() => {
-	for (const path of logo.value.children) {
-		path.style.strokeDasharray = path.getTotalLength();
-		path.style.strokeDashoffset = path.getTotalLength();
-	}
-	gsap.timeline({ delay : 0, ease : Power0.easeInOut })
-		.from('.menu', { x : -100 }, 0)
-		.to('.menu svg path', { strokeDashoffset : 0, duration : 3 }, 1)
-		.fromTo('.menu-item.left', { opacity : 0, x : -100 }, { opacity : 1, x : 0, duration : 0.5 }, 1)
-		.fromTo('.menu-item.right', { opacity : 0, x : 100 }, { opacity : 1, x : 0, duration : 0.5 }, 1)
-		.fromTo('.menu-line', { width : 0 }, { width : '100%' }, 2);
-});
-
-</script>
-
 <template>
-	<div class="menu-mobile block sm:hidden">
+	<div class="menu-mobile flex sm:hidden">
 		<SpeedDial
-			mask
 			:model="speedDialItems"
 			class="right-0 bottom-0"
 			direction="up"
@@ -114,21 +60,71 @@ onMounted(() => {
 	</div>
 </template>
 
+<script setup lang="ts">
+import { gsap, Power0 }   from 'gsap';
+import { onMounted, ref } from 'vue';
+import SpeedDial          from 'primevue/speeddial';
+import { useRouter }      from 'vue-router';
+
+const router = useRouter();
+const logo = ref(null);
+
+const speedDialItems = [
+	{
+		label  : 'Home',
+		icon   : 'pi pi-home',
+		command: () => router.push('/'),
+	},
+	{
+		label  : 'Journey',
+		icon   : 'pi pi-forward',
+		command: () => router.push('/journey'),
+	},
+	{
+		label  : 'Projects',
+		icon   : 'pi pi-wrench',
+		command: () => router.push('/projects'),
+	},
+	{
+		label  : 'Gallery',
+		icon   : 'pi pi-images',
+		command: () => router.push('/gallery'),
+	},
+	{
+		label  : 'Rants',
+		icon   : 'pi pi-comments',
+		command: () => router.push('/rants'),
+	},
+];
+
+onMounted(() => {
+	for (const path of logo.value.children) {
+		path.style.strokeDasharray = path.getTotalLength();
+		path.style.strokeDashoffset = path.getTotalLength();
+	}
+	gsap.timeline({ delay: 0, ease: Power0.easeInOut })
+		.from('.menu', { x: -100 }, 0)
+		.to('.menu svg path', { strokeDashoffset: 0, duration: 3 }, 1)
+		.fromTo('.menu-item.left', { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 0.5 }, 1)
+		.fromTo('.menu-item.right', { opacity: 0, x: 100 }, { opacity: 1, x: 0, duration: 0.5 }, 1)
+		.fromTo('.menu-line', { width: 0 }, { width: '100%' }, 2);
+});
+
+</script>
+
 <style lang="scss">
 .menu-mobile {
 	position: fixed;
 	bottom: 1em;
 	right: 1em;
 	z-index: 999;
-	opacity: 0.7;
 }
 .menu {
-	background-color: var(--surface-900);
+	background-color: var(--p-surface-700);
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vh;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	transform-origin: top left;
@@ -142,7 +138,7 @@ onMounted(() => {
 		position: absolute;
 		right : 0;
 		height: 2px;
-		background-color: var(--primary-500);
+		background-color: var(--p-primary-color);
 		z-index: 0;
 	}
 	.menu-items {
@@ -155,11 +151,12 @@ onMounted(() => {
 
 		.menu-item, .menu-signature {
 			display: block;
-			background-color: var(--surface-b);
+			background-color: var(--p-surface-700);
 			padding-right: 12px;
 			padding-left: 12px;
 			margin-right: 12px;
 			margin-left: 12px;
+			transition: all ease 1s;
 
 			&:hover {
 				margin-right: 24px;
@@ -185,7 +182,7 @@ onMounted(() => {
 			position: relative;
 			font-weight: 400;
 			&::before, &::after {
-				background-color: var(--primary-500);
+				background-color: var(--p-primary-color);
 				content: "";
 				width: 0;
 				height: 2px;

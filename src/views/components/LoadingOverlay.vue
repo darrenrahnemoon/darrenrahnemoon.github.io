@@ -101,8 +101,8 @@ defineProps<{
 	justify-content: center;
 	opacity: 0;
 	pointer-events: none;
-	background-color: var(--surface-900);
-	transition: var(--primary-transition);
+	background-color: var(--p-surface-900);
+	transition: all ease 1s;
 	z-index: 1000;
 
 	&.visible {
@@ -116,7 +116,7 @@ defineProps<{
 		rect {
 			width : 3px;
 			height : 100%;
-			fill : var(--primary-color);
+			fill : var(--p-primary-color);
 		}
 	}
 

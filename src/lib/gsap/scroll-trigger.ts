@@ -13,12 +13,12 @@ export const ScrollTriggerDirective: Directive = {
 			gsap.fromTo(element, {
 				...binding.value?.from,
 			}, {
-				scrollTrigger : {
-					trigger  : element,
-					start    : 'top top',
-					end      : 'center center',
-					duration : 1,
-					ease     : 'power2',
+				scrollTrigger: {
+					trigger : element,
+					start   : 'top top',
+					end     : 'center center',
+					duration: 1,
+					ease    : 'power2',
 					...binding.value?.to,
 				},
 			});

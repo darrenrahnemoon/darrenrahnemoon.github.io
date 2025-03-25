@@ -6,32 +6,32 @@ import { gsap }      from 'gsap';
 
 onMounted(() => {
 	gsap.timeline()
-		.from('.journey-intro h1', { x : -10, opacity : 0 }, 1)
-		.from('.journey-intro div', { x : 10, opacity : 0 }, 1);
+		.from('.journey-intro h1', { x: -10, opacity: 0 }, 1)
+		.from('.journey-intro div', { x: 10, opacity: 0 }, 1);
 
 	const events = document.getElementsByClassName('p-timeline-event');
 	for (let i = 0; i < events.length; i++) {
 		const event = events.item(i);
 		gsap.timeline({
-			scrollTrigger : {
-				trigger       : event,
-				start         : '+=150% bottom',
-				end           : '+=10%',
-				toggleActions : 'play none none reverse',
+			scrollTrigger: {
+				trigger      : event,
+				start        : '+=150% bottom',
+				end          : '+=10%',
+				toggleActions: 'play none none reverse',
 			},
 		})
 			.from(
 				event.querySelector('.p-timeline-event-marker'),
-				{ scale : 0.1, opacity : 0 }
+				{ scale: 0.1, opacity: 0 }
 			)
 			.from(
 				event.querySelector('.date'),
-				{ x : 100 * (i % 2 == 0 ? -1 : 1), opacity : 0 },
+				{ x: 100 * (i % 2 == 0 ? -1 : 1), opacity: 0 },
 				0
 			)
 			.from(
 				event.querySelector('.description'),
-				{ x : 100 * (i % 2 == 0 ? 1 : -1), opacity : 0 },
+				{ x: 100 * (i % 2 == 0 ? 1 : -1), opacity: 0 },
 				0
 			);
 	}
@@ -66,7 +66,7 @@ onMounted(() => {
 @use 'primeflex/core/variables' as *;
 .journey-intro {
 	padding : 2em;
-	background-color: var(--surface-800);
+	background-color: var(--p-surface-800);
 	h1 {
 		margin: 0 0 0.2em 0;
 	}
