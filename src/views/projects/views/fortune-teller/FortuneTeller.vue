@@ -22,10 +22,10 @@ const features = [
 </script>
 
 <template>
-	<div class="p-8 text-surface-900 dark:text-surface-0 bg-primary text-primary-contrast text-center">
+	<div class="p-8 bg-primary text-primary-contrast text-center">
 		<h1>Fortune Teller Trading Framework</h1>
 	</div>
-	<div class="bg-surface-700 dark:bg-surface-100 grid grid-cols-12 gap-4">
+	<div class="bg-surface-500 grid grid-cols-12 gap-4">
 		<div class="col-span-12 p-8">
 			<p>Fortune Teller is a trading framework written in python with a focus on modularity and customizability. MC consists of {{ features.length }} main features:</p>
 		</div>
@@ -50,7 +50,7 @@ const features = [
 		</div>
 	</div>
 
-	<div class="text-center p-8 bg-surface-800 dark:bg-surface-50">
+	<div class="text-center p-8 bg-surface-600">
 		<a class="p-component p-button p-button-outlined" href="https://github.com/darrenrahnemoon/trading" target="_blank">
 			View on Github
 		</a>
