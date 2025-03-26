@@ -1,6 +1,6 @@
 <template>
 	<div class="splash-screen full-screen parallax flex align-center justify-center">
-		<img class="avatar w-2/3 md:w-1/4" src="/assets/views/home/avatar.jpeg">
+		<img class="avatar w-2/3 md:w-1/5" src="/assets/views/home/avatar.jpeg">
 		<h1 class="name">
 			Darren Rahnemoon
 		</h1>
