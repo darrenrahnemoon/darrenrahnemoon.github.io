@@ -1,7 +1,7 @@
 <template>
 	<div class="grid grid-cols-12 gap-4">
 		<div class="col-span-12 md:col-span-4 p-0">
-			<img src="/public/assets/views/projects/argus/argus.png" alt="" class="w-full h-full">
+			<img src="/assets/views/projects/argus/argus.png" alt="" class="w-full h-full">
 		</div>
 		<div class="intro col-span-12 md:col-span-8 intro flex justify-center items-center flex-col text-gray-900 bg-primary-500">
 			<h1>
@@ -104,11 +104,11 @@ const variants = [
 		icon   : 'pi pi-refresh',
 		content: 'Argus Strain is designed to interface with strain gauges and collect data on the structural integrity of a rocket or UAV during flight. Each board provides 10 channels with the ability to customize the configuration of the wheatstone bridge to suit the specific strain gauge being used.',
 		images : [
-			'/public/assets/views/projects/argus/strain/3d.png',
-			'/public/assets/views/projects/argus/strain/top-3d.png',
-			'/public/assets/views/projects/argus/strain/top-2d.png',
-			'/public/assets/views/projects/argus/strain/bottom-3d.png',
-			'/public/assets/views/projects/argus/strain/bottom-2d.png',
+			'/assets/views/projects/argus/strain/3d.png',
+			'/assets/views/projects/argus/strain/top-3d.png',
+			'/assets/views/projects/argus/strain/top-2d.png',
+			'/assets/views/projects/argus/strain/bottom-3d.png',
+			'/assets/views/projects/argus/strain/bottom-2d.png',
 		],
 	},
 	{
@@ -116,12 +116,12 @@ const variants = [
 		icon   : 'pi pi-gauge',
 		content: 'Argus Pressure is designed to interface with 8 isolated Amphenol pressure sensors and collect data on the regional static pressure of the rocket. Each board comes with an aluminum manifold to isolate each channel from each other. The aluminum manifold also maintains a steady temperature using a cartridge heater and an NTC thermistor driven by the board to ensure accurate readings.',
 		images : [
-			'/public/assets/views/projects/argus/pressure/3d.png',
-			'/public/assets/views/projects/argus/pressure/3d-with-manifold.png',
-			'/public/assets/views/projects/argus/pressure/top-3d.png',
-			'/public/assets/views/projects/argus/pressure/top-2d.png',
-			'/public/assets/views/projects/argus/pressure/bottom-3d.png',
-			'/public/assets/views/projects/argus/pressure/bottom-2d.png',
+			'/assets/views/projects/argus/pressure/3d.png',
+			'/assets/views/projects/argus/pressure/3d-with-manifold.png',
+			'/assets/views/projects/argus/pressure/top-3d.png',
+			'/assets/views/projects/argus/pressure/top-2d.png',
+			'/assets/views/projects/argus/pressure/bottom-3d.png',
+			'/assets/views/projects/argus/pressure/bottom-2d.png',
 		],
 	},
 	{
@@ -129,11 +129,11 @@ const variants = [
 		icon   : 'pi pi-sun',
 		content: 'Argus Temperature is designed to interface with 8 thermocouples and collect data on the temperature of the rocket or UAV during flight. The cold junction temperature is measured using a thermistor and compensated for in the readings. ',
 		images : [
-			'/public/assets/views/projects/argus/temperature/3d.png',
-			'/public/assets/views/projects/argus/temperature/top-3d.png',
-			'/public/assets/views/projects/argus/temperature/top-2d.png',
-			'/public/assets/views/projects/argus/temperature/bottom-3d.png',
-			'/public/assets/views/projects/argus/temperature/bottom-2d.png',
+			'/assets/views/projects/argus/temperature/3d.png',
+			'/assets/views/projects/argus/temperature/top-3d.png',
+			'/assets/views/projects/argus/temperature/top-2d.png',
+			'/assets/views/projects/argus/temperature/bottom-3d.png',
+			'/assets/views/projects/argus/temperature/bottom-2d.png',
 		],
 	},
 ];
