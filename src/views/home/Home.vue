@@ -53,8 +53,8 @@
 		</div>
 	</div>
 	<Projects
-		title="Recent Projects"
-		:projects="projects.slice(0, 3)"
+		title="Notable Projects"
+		:projects="notableProjects"
 	>
 		<template #after>
 			<router-link to="/projects">
@@ -81,6 +81,12 @@ const contactMethods = ref([
 	{ icon: 'linkedin',	path: 'https://www.linkedin.com/in/darrenrahnemoon/' },
 	{ icon: 'instagram',	path: 'https://www.instagram.com/darrenrahnemoon/' },
 	{ icon: 'envelope',	path: 'mailto:darrenrahnemoon@gmail.com' },
+]);
+
+const notableProjects = ref([
+	projects.find(project => project.slug === 'argus'),
+	projects.find(project => project.slug === 'fortune-teller'),
+	projects.find(project => project.slug === 'yekan'),
 ]);
 
 onMounted(function() {

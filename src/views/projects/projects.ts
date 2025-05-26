@@ -86,6 +86,15 @@ export const projects: Project[] = _.orderBy([
 		date     : new Date('February 2022'),
 		url      : 'https://github.com/darrenrahnemoon/commander.js-decorated',
 	},
+	{
+		slug     : 'argus',
+		name     : 'Argus Sensor Suite',
+		summary  : 'Instrumentation Sensor Suite for UAVs/Rockets',
+		thumbnail: '/assets/views/projects/argus/argus.png',
+		icon     : 'pi pi-bolt',
+		date     : new Date('September 2024'),
+		component: () => import('./views/argus/Argus.vue'),
+	},
 ], 'date', 'desc');
 
 export interface Project {

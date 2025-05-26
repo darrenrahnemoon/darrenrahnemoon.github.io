@@ -1,26 +1,3 @@
-<script setup lang='ts'>
-import Card from 'primevue/card';
-
-const features = [
-	{
-		title  : 'Data Warehousing',
-		content: "MC provides integration with any broker by allowing them to implement a \"Repository\" class. Once devs have implemented the repository, MC can take care of gradually collecting all of the brokers's instrument data in one central database:",
-		icon   : 'pi pi-database',
-	},
-	{
-		title  : 'Reusable Strategy Design',
-		content: 'MC provides a "Strategy" class that comes with all the features developers need to implement their trading strategy. Hindsight is baked into what the strategy implementation sees. The same strategy then can be tested using the "SimulationBroker" and deployed live on any "Broker" class implementation',
-		icon   : 'pi pi-refresh',
-	},
-	{
-		title  : 'ML Utilities',
-		content: 'Extending Tensorflow\'s OOP design, the multi-gpu/multiprocess and hyper-optimized implementation of MC model trainer allows training large feature sets on some of the weakest devices.',
-		icon   : 'pi pi-wrench',
-	},
-];
-
-</script>
-
 <template>
 	<div class="p-8 bg-primary text-primary-contrast text-center">
 		<h1>Fortune Teller Trading Framework</h1>
@@ -56,3 +33,26 @@ const features = [
 		</a>
 	</div>
 </template>
+
+<script setup lang='ts'>
+import Card from 'primevue/card';
+
+const features = [
+	{
+		title  : 'Data Warehousing',
+		content: "MC provides integration with any broker by allowing them to implement a \"Repository\" class. Once devs have implemented the repository, MC can take care of gradually collecting all of the brokers's instrument data in one central database:",
+		icon   : 'pi pi-database',
+	},
+	{
+		title  : 'Reusable Strategy Design',
+		content: 'MC provides a "Strategy" class that comes with all the features developers need to implement their trading strategy. Hindsight is baked into what the strategy implementation sees. The same strategy then can be tested using the "SimulationBroker" and deployed live on any "Broker" class implementation',
+		icon   : 'pi pi-refresh',
+	},
+	{
+		title  : 'ML Utilities',
+		content: 'Extending Tensorflow\'s OOP design, the multi-gpu/multiprocess and hyper-optimized implementation of MC model trainer allows training large feature sets on some of the weakest devices.',
+		icon   : 'pi pi-wrench',
+	},
+];
+
+</script>
