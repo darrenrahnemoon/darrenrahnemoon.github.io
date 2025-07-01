@@ -63,7 +63,7 @@ export const projects: Project[] = _.orderBy([
 		slug     : 'fortune-teller',
 		name     : 'Fortune Teller',
 		summary  : 'One-Stop Shop for Backtesting and Warehousing Historical Data',
-		thumbnail: '/assets/views/projects/fortune-teller/fortune-teller.jpeg',
+		thumbnail: '/assets/views/projects/fortune-teller/fortune-teller.png',
 		icon     : 'pi pi-chart-line',
 		date     : new Date('November 2022'),
 		component: () => import('./views/fortune-teller/FortuneTeller.vue'),
@@ -94,6 +94,15 @@ export const projects: Project[] = _.orderBy([
 		icon     : 'pi pi-bolt',
 		date     : new Date('September 2024'),
 		component: () => import('./views/argus/Argus.vue'),
+	},
+	{
+		slug     : 'safety-inspection-tool',
+		name     : 'Construction Safety Advisor',
+		summary  : 'AI Advisor for Construction Safety Inspectors',
+		thumbnail: '/assets/views/projects/safety-inspection-tool/thumbnail.png',
+		icon     : 'pi pi-hammer',
+		date     : new Date('April 2025'),
+		component: () => import('./views/safety-inspection-tool/SafetyInspectionTool.vue'),
 	},
 ], 'date', 'desc');
 

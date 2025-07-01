@@ -36,8 +36,8 @@
 				I created this website to showcase my projects and share my life experiences with the world.
 			</p>
 			<br>
-			<p class="pb-1">
-				You can reach out to me via:
+			<p class="pb-4">
+				You can find me on the following platforms:
 			</p>
 			<p>
 				<a
@@ -81,6 +81,7 @@ const contactMethods = ref([
 	{ icon: 'linkedin',	path: 'https://www.linkedin.com/in/darrenrahnemoon/' },
 	{ icon: 'instagram',	path: 'https://www.instagram.com/darrenrahnemoon/' },
 	{ icon: 'envelope',	path: 'mailto:darrenrahnemoon@gmail.com' },
+	{ icon: 'github',  	path: 'https://github.com/darrenrahnemoon' },
 ]);
 
 const notableProjects = ref([
